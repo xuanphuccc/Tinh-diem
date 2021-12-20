@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="slider">
+            <div class="grid wide">
+                <div class="slider-wrap">
+                    <h1>Công cụ tính điểm trung bình học kỳ đại học</h1>
+                </div>
+            </div>
+        </div>
+        <div class="points">
+            <div class="grid wide">
+                <div class="training">
+                    <h4>Giải thích thuật ngữ:</h4>
+                    <p>Tỉ lệ phần trăm: tức là trọng số của điểm quá trình 
+                    và điểm thi <br> (ví dụ: 55 tức là
+                    điểm quá trình chiếm 50% và điểm thi chiếm 50%.</p>
+                    <h5>Lưu ý: bắt buộc phải nhập 55 hoặc 46 hoặc 37 tương ứng vào ô "Tỷ lệ phần trăm" nếu không sẽ không tính được.</h5>
+                </div>
+
+                <!-- ---------------- Input --------------- -->
+                <div class="input">
+                    <form action="#">
+                        <div class="table input-table">
+                            <div class="row no-gutters first-row" style="border-radius: 6px 6px 0 0;">
+                                <div class="col l-3 m-3 c-3 th" style="border-radius: 6px 0 0 0;"><label for="mon0">Tên môn học</label></div>
+                                <div class="col l-2 m-2 c-2 th"><label for="tc0">Số tín chỉ</label></div>
+                                <div class="col l-3 m-3 c-3 th"><label for="phanTram0">Tỉ lệ phần trăm</label></div>
+                                <div class="col l-2 m-2 c-2 th"><label for="diemqt0">Điểm quá trình</label></div>
+                                <div class="col l-2 m-2 c-2 th" style="border-radius: 0 6px 0 0;"><label for="diemThi0">Điểm thi</label></div>
+                            </div>
+        
+                            <div class="row no-gutters">
+                                <div class="col l-3 m-3 c-3 td"><input type="text" name="mon" id="mon0" value="" autofocus placeholder="Nhập vào đây"></div>
+                                <div class="col l-2 m-2 c-2 td"><input type="text" name="tc" id="tc0" value=""></div>
+                                <div class="col l-3 m-3 c-3 td"><input type="text" name="phanTram" id="phanTram0" value="" placeholder="55 hoặc 46 hoặc 37"></div>
+                                <div class="col l-2 m-2 c-2 td"><input type="text" name="diemqt" id="diemqt0" value=""></div>
+                                <div class="col l-2 m-2 c-2 td"><input type="text" name="diemThi" id="diemThi0" value=""></div>
+                            </div>
+                        </div>
+                        <input type="button" class="button" id="submit" value="Lưu">
+                    </form>
+                </div>
+
+                <!-- --------- Output --------- -->
+                <div class="output">
+                    <div class="table">
+                        <div class="row no-gutters first-row" style="border-radius: 6px 6px 0 0;">
+                            <div class="col l-1 m-1 c-1 th" style="border-radius: 6px 0 0 0;">STT</div>
+                            <div class="col l-2 m-2 c-2 th">Tên môn học</div>
+                            <div class="col l-1 m-1 c-1 th">Số tín chỉ</div>
+                            <div class="col l-1 m-1 c-1 th">Tỉ lệ</div>
+                            <div class="col l-2 m-2 c-2 th">Điểm quá trình</div>
+                            <div class="col l-2 m-2 c-2 th">Điểm thi</div>
+                            <div class="col l-1 m-1 c-1 th">Điểm hệ 10</div>
+                            <div class="col l-1 m-1 c-1 th">Điểm hệ 4</div>
+                            <div class="col l-1 m-1 c-1 th" style="border-radius: 0 6px 0 0;">Điểm chữ</div>
+                        </div>
+                        <div class="sub-row">
+                            <div class="row no-gutters tr">
+                                <div class="col l-1 m-1 c-1 td"><p>---</p></div>
+                                <div class="col l-2 m-2 c-2 td"><p>---</p></div>
+                                <div class="col l-1 m-1 c-1 td"><p>---</p></div>
+                                <div class="col l-1 m-1 c-1 td"><p>---</p></div>
+                                <div class="col l-2 m-2 c-2 td"><p>---</p></div>
+                                <div class="col l-2 m-2 c-2 td"><p>---</p></div>
+                                <div class="col l-1 m-1 c-1 td"><p>---</p></div>
+                                <div class="col l-1 m-1 c-1 td"><p>---</p></div>
+                                <div class="col l-1 m-1 c-1 td"><p>---</p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Diem trung binh hoc ky -->
+                    <div class="tbhk"></div>
+
+                    <!-- Xoa hang -->
+                    <div class="remove">
+                        <form action="#">
+                            <label for="input-remove">Nhập hàng muốn xóa</label>
+                            <input type="text" id="input-remove" name="" value="" required>
+                            <input type="button" class="button" id="remove-btn" value="Xóa">
+                            <!-- <input type="button" class="button" id="reset-btn" value="Xóa tất cả"> -->
+                            <a href="" class="button" id="reset-btn">Xóa tất cả</a>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="intro">
+            <div class="grid wide">
+                <div class="intro-wrap">
+                    <div class="row">
+                        <div class="col l-6 m-6 c-12">
+                            <div class="text-wrap">
+                                <h3>Công cụ tính điểm này sử dụng bảng quy đổi điểm
+                                    của Đại học Giao thông Vận Tải Hà Nội</h3>
+                                <p>(Nếu trường bạn có công thức tương tự dưới đây <br>
+                                thì bạn cũng có thể sử dụng công cụ này)</p>
+                            </div>
+                            
+                        </div>
+                        <div class="col l-6 m-6 c-12">
+                            <div class="img-wrap">
+                                <img src="tinh_diem.jpg" alt="Bảng quy đổi điểm">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
