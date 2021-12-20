@@ -25,7 +25,7 @@ input[type="text"] {
     border: none;
     background: #1A374D;
     color: #fff;
-    padding: 12px 16px;
+    padding: 14px 16px;
     font-size: 16px;
     border-radius: 5px;
     -webkit-appearance: none;
@@ -116,30 +116,31 @@ input[type="text"] {
     margin-top: 24px;
 }
 
-.output .remove form {
+.output .remove .label-wrap {
     display: flex;
+    align-items: center;
 }
-
 .output .remove label {
     font-size: 16px;
     color: #F05454;
-    margin: 0 16px;
-    align-self: center;
 }
 
 .output .remove #input-remove {
     border: 1px solid #F05454;
-    width: 200px;
+    width: 100%;
     border-radius: 5px 0 0 5px;
+    padding: 13px 16px;
 }
 
 .output .remove #remove-btn {
     background: #F05454;
     border-radius: 0 5px 5px 0;
+    width: 100%;
 }
 .output .remove #reset-btn {
     background: #F05454;
-    margin-left: 50px;
+    /* margin-left: 50px; */
+    margin-left: 190px;
 }
 
 
@@ -166,8 +167,8 @@ input[type="text"] {
 }
 
 .intro .intro-wrap {
-    height: 350px;
     background: #F0ECE3;
+    /* height: 350px; */
     border-radius: 6px;
 }
 
@@ -203,4 +204,55 @@ input[type="text"] {
 
 .footer {
     height: 350px;
+}
+
+
+
+@media (max-width: 739px) {
+    .slider .slider-wrap {
+        margin: 0 24px;
+        text-align: center;
+    }
+
+
+
+    .points {
+        margin: 50px 24px 100px;
+    }
+
+
+    .intro .intro-wrap .text-wrap {
+        padding: 24px;
+        text-align: center;
+    
+    }
+
+}
+
+/* tablet & Mobile */
+@media (max-width: 1023px) {
+    .button#submit {
+        width: 100%;
+    
+    }
+
+
+    .output .remove #reset-btn {
+        margin: 60px 190px 0;
+    }
+    
+    .output .remove #input-remove {
+        margin: 16px 0;
+    }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    
+}
+
+
+/* PC */
+@media (min-width: 1024px) {
+
 }
