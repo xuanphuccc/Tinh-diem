@@ -86,6 +86,7 @@ var xemKq = document.getElementById('xemkq');
 ghi đè lên cái cũ cho nên phải sử dụng một hàm
 getInput với thời gian thực */
 var count = 0;
+
 function getInput () {
     var mon = 'mon' + count;
     var tc = 'tc' + count;
@@ -200,5 +201,22 @@ function print () {
 }
 
 
+var removeInput = document.getElementById('input-remove');
+var removeBtn = document.getElementById('remove-btn');
+/* Hàm xóa 1 phần tử của mảng */
+function remove () {
+    var index = removeInput.value*1;
+    console.log(`index = ${index}`);
+    if (index <= n && index > 0) {
+        a.splice(index - 1, 1);
+        n--;
+        console.log('xóa thành công');
+        print();
+    } else console.log('không có phần tử này');
+}
+
+
 submit.addEventListener('click', DSMonHoc);
 submit.addEventListener('click', print);
+
+removeBtn.addEventListener('click', remove);
