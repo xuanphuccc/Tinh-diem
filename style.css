@@ -137,10 +137,16 @@ input[type="text"] {
     border-radius: 0 5px 5px 0;
     width: 100%;
 }
+
+.output .remove .reset-wrap {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .output .remove #reset-btn {
     background: #F05454;
     /* margin-left: 50px; */
-    margin-left: 190px;
+    max-width: 150px;
 }
 
 
@@ -237,8 +243,9 @@ input[type="text"] {
     }
 
 
-    .output .remove #reset-btn {
-        margin: 60px 190px 0;
+    .output .remove .reset-wrap {
+        margin-top: 60px;
+        justify-content: center;
     }
     
     .output .remove #input-remove {
