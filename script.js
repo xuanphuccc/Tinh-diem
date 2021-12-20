@@ -203,6 +203,7 @@ function print () {
 
 var removeInput = document.getElementById('input-remove');
 var removeBtn = document.getElementById('remove-btn');
+var removeLabel = document.getElementById('remove-label');
 /* Hàm xóa 1 phần tử của mảng */
 function remove () {
     var index = removeInput.value*1;
@@ -210,9 +211,13 @@ function remove () {
     if (index <= n && index > 0) {
         a.splice(index - 1, 1);
         n--;
-        console.log('xóa thành công');
+        removeLabel.innerText = 'Xóa thành công!';
         print();
-    } else console.log('không có phần tử này');
+    } else removeLabel.innerText = 'Không có phần tử này!';
+    
+    setTimeout (function () {
+        removeLabel.innerText = 'Nhập hàng muốn xóa';
+    }, 1500);
 }
 
 
