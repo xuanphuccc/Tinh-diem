@@ -203,21 +203,27 @@ function print () {
 
 var removeInput = document.getElementById('input-remove');
 var removeBtn = document.getElementById('remove-btn');
-var removeLabel = document.getElementById('remove-label');
+var removeLabel = document.querySelector('.label-wrap');
 /* Hàm xóa 1 phần tử của mảng */
 function remove () {
     var index = removeInput.value*1;
-    console.log(`index = ${index}`);
+    console.log(`index remove = ${index}`);
     if (index <= n && index > 0) {
         a.splice(index - 1, 1);
         n--;
-        removeLabel.innerText = 'Xóa thành công!';
+        removeLabel.innerHTML = `
+        <i  style="color:green;" class="far fa-check-circle"></i>
+        <label style="color:green;" id="remove-label" for="input-remove">Xóa thành công!</label>
+        `;
         print();
-    } else removeLabel.innerText = 'Không có phần tử này!';
+    } else removeLabel.innerHTML = `
+    <i style="color: #F05454;" class="far fa-times-circle"></i>
+    <label style="color:red;" id="remove-label" for="input-remove">Không có dòng này!</label>
+    `;
     
     setTimeout (function () {
         removeLabel.innerText = 'Nhập hàng muốn xóa';
-    }, 1500);
+    }, 2000);
 }
 
 
