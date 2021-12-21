@@ -20,36 +20,38 @@
         </div>
         <div class="points">
             <div class="grid wide">
-                <div class="training">
-                    <h4>Giải thích thuật ngữ:</h4>
-                    <p>Tỉ lệ phần trăm: tức là trọng số của điểm quá trình 
-                    và điểm thi <br> (ví dụ: 55 tức là
-                    điểm quá trình chiếm 50% và điểm thi chiếm 50%.</p>
-                    <h5>Lưu ý: bắt buộc phải nhập 55 hoặc 46 hoặc 37 tương ứng vào ô "Tỷ lệ phần trăm" nếu không sẽ không tính được.</h5>
-                </div>
-
-                <!-- ---------------- Input --------------- -->
-                <div class="input">
-                    <form action="#">
-                        <div class="table input-table">
-                            <div class="row no-gutters first-row" style="border-radius: 6px 6px 0 0;">
-                                <div class="col l-3 m-3 c-3 th" style="border-radius: 6px 0 0 0;"><label for="mon0">Tên môn học</label></div>
-                                <div class="col l-2 m-2 c-2 th"><label for="tc0">Số tín chỉ</label></div>
-                                <div class="col l-3 m-3 c-3 th"><label for="phanTram0">Tỉ lệ phần trăm</label></div>
-                                <div class="col l-2 m-2 c-2 th"><label for="diemqt0">Điểm quá trình</label></div>
-                                <div class="col l-2 m-2 c-2 th" style="border-radius: 0 6px 0 0;"><label for="diemThi0">Điểm thi</label></div>
+                <div class="input-wraper">
+                    <div class="training">
+                        <h4>Giải thích thuật ngữ:</h4>
+                        <p>Trọng số: là trọng số của điểm quá trình 
+                        và điểm thi <br> (ví dụ: 55 tức là
+                        điểm quá trình chiếm 50% và điểm thi chiếm 50%).</p>
+                        <h5>Lưu ý: bắt buộc phải nhập 55 hoặc 46 hoặc 37 tương ứng vào ô "Trọng số" nếu không sẽ không tính được.</h5>
+                    </div>
+    
+                    <!-- ---------------- Input --------------- -->
+                    <div class="input">
+                        <form action="#">
+                            <div class="table input-table">
+                                <div class="row no-gutters first-row" style="border-radius: 6px 6px 0 0;">
+                                    <div class="col l-3 m-3 c-3 th" style="border-radius: 6px 0 0 0;"><label for="mon0">Tên môn học</label></div>
+                                    <div class="col l-2 m-2 c-2 th"><label for="tc0">Số tín chỉ</label></div>
+                                    <div class="col l-3 m-3 c-3 th"><label for="phanTram0">Trọng số</label></div>
+                                    <div class="col l-2 m-2 c-2 th"><label for="diemqt0">Điểm quá trình</label></div>
+                                    <div class="col l-2 m-2 c-2 th" style="border-radius: 0 6px 0 0;"><label for="diemThi0">Điểm thi</label></div>
+                                </div>
+            
+                                <div class="row no-gutters">
+                                    <div class="col l-3 m-3 c-3 td"><input type="text" name="mon" id="mon0" value="" autofocus placeholder="Nhập vào đây"></div>
+                                    <div class="col l-2 m-2 c-2 td"><input type="text" name="tc" id="tc0" value=""></div>
+                                    <div class="col l-3 m-3 c-3 td"><input type="text" name="phanTram" id="phanTram0" value="" placeholder="55 hoặc 46 hoặc 37"></div>
+                                    <div class="col l-2 m-2 c-2 td"><input type="text" name="diemqt" id="diemqt0" value=""></div>
+                                    <div class="col l-2 m-2 c-2 td"><input type="text" name="diemThi" id="diemThi0" value=""></div>
+                                </div>
                             </div>
-        
-                            <div class="row no-gutters">
-                                <div class="col l-3 m-3 c-3 td"><input type="text" name="mon" id="mon0" value="" autofocus placeholder="Nhập vào đây"></div>
-                                <div class="col l-2 m-2 c-2 td"><input type="text" name="tc" id="tc0" value=""></div>
-                                <div class="col l-3 m-3 c-3 td"><input type="text" name="phanTram" id="phanTram0" value="" placeholder="55 hoặc 46 hoặc 37"></div>
-                                <div class="col l-2 m-2 c-2 td"><input type="text" name="diemqt" id="diemqt0" value=""></div>
-                                <div class="col l-2 m-2 c-2 td"><input type="text" name="diemThi" id="diemThi0" value=""></div>
-                            </div>
-                        </div>
-                        <input type="button" class="button" id="submit" value="Lưu">
-                    </form>
+                            <input type="button" class="button" id="submit" value="Lưu">
+                        </form>
+                    </div>
                 </div>
 
                 <!-- --------- Output --------- -->

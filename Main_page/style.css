@@ -7,6 +7,7 @@
 
 html {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #eef4f6;
 }
 
 
@@ -89,7 +90,13 @@ input[type="text"] {
 
 /* -------------   ------------- */
 .points {
-    margin: 50px 0 100px;
+    margin: 50px 0;
+}
+
+.points .input-wraper {
+    background-color: #fff;
+    padding: 50px 16px;
+    border-radius: 8px;
 }
 
 .points .training h4, p {
@@ -105,6 +112,9 @@ input[type="text"] {
 
 .output {
     margin-top: 50px;
+    background-color: #fff;
+    padding: 50px 16px;
+    border-radius: 8px;
 }
 
 .output .noti-text {
@@ -174,7 +184,7 @@ input[type="text"] {
 
 /* ========== Intro ============ */
 .intro {
-    /* height: 350px; */
+    margin-bottom: 50px;
 }
 
 .intro .intro-wrap {
@@ -213,9 +223,9 @@ input[type="text"] {
 
 /* ========== footer ============ */
 
-.footer {
+/* .footer {
     height: 350px;
-}
+} */
 
 
 
