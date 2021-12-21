@@ -118,6 +118,7 @@ input[type="text"] {
 }
 
 .output .remove .label-wrap {
+    height: 48px;
     display: flex;
     align-items: center;
 }
@@ -253,7 +254,7 @@ input[type="text"] {
     }
     
     .output .remove #input-remove {
-        margin: 16px 0;
+        margin-bottom: 16px;
     }
 }
 
