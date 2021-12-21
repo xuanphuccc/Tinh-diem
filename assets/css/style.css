@@ -223,9 +223,10 @@ input[type="text"] {
 
 /* ========== footer ============ */
 
-/* .footer {
-    height: 350px;
-} */
+.footer {
+    padding: 0 0 40px;
+    text-align: center;
+}
 
 
 
