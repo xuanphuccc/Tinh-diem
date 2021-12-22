@@ -137,11 +137,12 @@ function getDiemHKVaTinChi () {
     var getSoTC = document.getElementById(`term-number${count}`);
     diemHK = getDiemHK.value * 1;
     soTC = getSoTC.value * 1;
-    
+    console.log(test);
     if (getDiemHK.value == "" || getSoTC.value == "") {
         alert ('Chưa nhập thông tin');
         return false;
-    } else {
+    }
+    else {
         if (diemHK < 0) {
             alert('Điểm học kỳ phải là số và lớn hơn 0');
             return false;
