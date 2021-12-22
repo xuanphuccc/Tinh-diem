@@ -195,7 +195,10 @@ function tinhDiem () {
     var diemHienTai = tongDaHoc/tongTCDaHoc;
     var diemCanDat = ((target * fullTc) - tongDaHoc) / (fullTc - tongTCDaHoc);
 
-    inputWrap.innerHTML = `
+    
+
+    if (target == 3.20) {
+        inputWrap.innerHTML = `
     <div class="target-wrap">
         <div class="row">
             <div class="col l-5 m-5 c-12 sticker-container">
@@ -215,5 +218,28 @@ function tinhDiem () {
         </div>
     </div>
     `
+    }
+    if (target == 2.50) {
+    inputWrap.innerHTML = `
+    <div class="target-wrap">
+        <div class="row">
+            <div class="col l-5 m-5 c-12 sticker-container">
+                <h2>Đây rồi kết quả của bạn nè</h2>
+                <div class="sticker-wrap">
+                    <img class="sticker" src="./assets/img/success.png" alt="">
+                </div>
+            </div>
+            <div class="col l-7 m-7 c-12 target-container">
+                <div class="row target-row">
+                    <div class="col l-12 m-12 c12 center">
+                        <h2>Điểm của bạn hiện tại ${diemHienTai.toFixed(2)}</h2>
+                        <h2>Cần đạt tối thiểu ${diemCanDat.toFixed(2)} để được bằng khá!</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    `
+    }
 }
 
