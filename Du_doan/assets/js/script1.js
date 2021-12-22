@@ -61,7 +61,6 @@ function setInputTerm () {
     `
     var submitTermBtn = document.getElementById('submit-term');
     submitTermBtn.addEventListener('click',getInputTerm);
-    submitTermBtn.addEventListener('click',setDiemHKGoc);
 }
 // Sau khi set ô nhập thì thực hiện lấy dữ liệu
 // Lấy dữ liệu Số học kỳ đã học
@@ -69,6 +68,11 @@ var soHK = 0;
 function getInputTerm () {
     var inputTerm = document.getElementById('input-term');
     soHK = inputTerm.value * 1;
+    if (inputTerm.value != "") {
+        if (Number.isInteger(soHK) && soHK >= 0) {
+            setDiemHKGoc ();
+        }else alert('Phải là số nguyên và lớn hơn 0');
+    }else alert('Chưa nhập thông tin');
 }
 
 
@@ -90,11 +94,11 @@ function setDiemHKGoc () {
                         <div class="row point-wrap">
                             <div class="col l-12 m-12 c-12 center">
                                 <label for="term-point">Nhập điểm tổng kết học kỳ ${count} (hệ 4)</label><br>
-                                <input type="number" name="" id="term-point${count}">
+                                <input type="number" name="" id="term-point${count}" value="">
                             </div>
                             <div class="col l-12 m-12 c-12 center">
                                 <label for="term-number">Nhập tổng tín chỉ học kỳ ${count}</label><br>
-                                <input type="number" name="" id="term-number${count}">
+                                <input type="number" name="" id="term-number${count}" value="">
                             </div>
                         </div>
                     </div>
@@ -133,21 +137,38 @@ function getDiemHKVaTinChi () {
     var getSoTC = document.getElementById(`term-number${count}`);
     diemHK = getDiemHK.value * 1;
     soTC = getSoTC.value * 1;
+    
+    if (getDiemHK.value == "" || getSoTC.value == "") {
+        alert ('Chưa nhập thông tin');
+        return false;
+    } else {
+        if (diemHK < 0) {
+            alert('Điểm học kỳ phải là số và lớn hơn 0');
+            return false;
+        }
+        else if (Number.isInteger(soTC) && soTC > 0) {
+            return true;
+        } else  {
+            alert ('Số tín chỉ phải là số nguyên và lớn hơn 0');
+            return false;
+        }
+    }
+    
 }
 
 function DanhSach () {
-    getDiemHKVaTinChi();
-    var tmp = new DiemHocKy (diemHK, soTC);
-    a.push(tmp);
-    // console.table(a);
-    count++;
-    var ok = true;
-    if (count > soHK) {
-        ok = false;
-        inputFullTC();
-    }
-    if (ok) {
-        setDiemHKVaTinChi();
+    var check = getDiemHKVaTinChi();
+    if (check) {
+        var tmp = new DiemHocKy (diemHK, soTC);
+        a.push(tmp);
+        // console.table(a);
+        count++;
+        if (count > soHK) {
+            inputFullTC();
+        }
+        else {
+            setDiemHKVaTinChi();
+        }
     }
 }
 
@@ -181,7 +202,11 @@ var fullTc = 0;
 function getFullTC () {
     var getFull = document.getElementById('full-tc');
     fullTc = getFull.value * 1;
-    tinhDiem();
+    if (getFull.value != "") {
+        if (Number.isInteger(fullTc) && fullTc > 0) {
+            tinhDiem();
+        } else alert ('Tổng số tín chỉ phải là số nguyên dương');
+    } else alert ('Chưa nhập thông tin');
 }
 
 function tinhDiem () {
