@@ -35,9 +35,29 @@ var inputWrap = document.querySelector ('.input-wrap');
 // Hiện ô nhập số học kỳ đã học ghi đè lên bằng giỏi bằng khá
 function setInputTerm () {
     inputWrap.innerHTML = `
-    <label for="input-term">Nhập số học kỳ đã học</label> <br>
-    <input type="text" id="input-term" name="" value="">
-    <input type="button" id="submit-term" value="Submit">
+    <div class="target-wrap">
+        <div class="row">
+            <div class="col l-5 m-5 c-12 sticker-container">
+                <h2>Bạn đã học bao nhiêu học kỳ?</h2>
+                <div class="sticker-wrap">
+                    <img class="sticker" src="./assets/img/unicorn (4).png" alt="">
+                </div>
+            </div>
+            <div class="col l-7 m-7 c-12 target-container">
+                <div class="row target-row">
+                    <div class="col l-12 m-12 c-12 term-container">
+                        <label for="input-term">Nhập số học kỳ đã học</label>
+                    </div>
+                    <div class="col l-12 m-12 c-12 term-container">
+                        <input type="number" id="input-term" name="" value="">
+                    </div>
+                    <div class="col l-12 m-12 c-12 term-container">
+                        <input class="button" type="button" id="submit-term" value="Nhập ngay">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     `
     var submitTermBtn = document.getElementById('submit-term');
     submitTermBtn.addEventListener('click',getInputTerm);
@@ -56,13 +76,35 @@ function getInputTerm () {
 var count = 1;
 function setDiemHKGoc () {
     inputWrap.innerHTML = `
-    <div class="point-wrap">
-        <label for="term-point">Nhập điểm tổng kết học kỳ thứ ${count} (hệ 4)</label>
-        <input type="text" name="" id="term-point${count}">
-        <label for="term-number">Nhập tổng tín chỉ học kỳ thứ ${count}</label>
-        <input type="text" name="" id="term-number${count}">
+    <div class="target-wrap">
+        <div class="row">
+            <div class="col l-5 m-5 c-12 sticker-container">
+                <h2>Nhập tổng điểm và tổng tín chỉ từng kỳ của bạn</h2>
+                <div class="sticker-wrap">
+                    <img class="sticker" src="./assets/img/unicorn (2).png" alt="">
+                </div>
+            </div>
+            <div class="col l-7 m-7 c-12 target-container">
+                <div class="row target-row">
+                    <div class="col l-12 m-12 c-12">
+                        <div class="row point-wrap">
+                            <div class="col l-12 m-12 c-12 center">
+                                <label for="term-point">Nhập điểm tổng kết học kỳ ${count} (hệ 4)</label><br>
+                                <input type="number" name="" id="term-point${count}">
+                            </div>
+                            <div class="col l-12 m-12 c-12 center">
+                                <label for="term-number">Nhập tổng tín chỉ học kỳ ${count}</label><br>
+                                <input type="number" name="" id="term-number${count}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col l-12 m-12 c-12 center ">
+                        <input type="button" class="button" id="submit-point" value="Nhập ngay">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <input type="button" class="button" id="submit-point" value="Submit">
     `
     var getSubmitPoints = document.getElementById('submit-point');
     
@@ -72,10 +114,14 @@ function setDiemHKGoc () {
 function setDiemHKVaTinChi () {
     var getPointsWrap = document.querySelector('.point-wrap');
     getPointsWrap.innerHTML = `
-    <label for="term-point">Nhập điểm tổng kết học kỳ thứ ${count} (hệ 4)</label>
-    <input type="text" name="" id="term-point${count}">
-    <label for="term-number">Nhập tổng tín chỉ học kỳ thứ ${count}</label>
-    <input type="text" name="" id="term-number${count}">
+    <div class="col l-12 m-12 c-12 center">
+        <label for="term-point">Nhập điểm tổng kết học kỳ ${count} (hệ 4)</label><br>
+        <input type="number" name="" id="term-point${count}">
+    </div>
+    <div class="col l-12 m-12 c-12 center">
+        <label for="term-number">Nhập tổng tín chỉ học kỳ ${count}</label><br>
+        <input type="number" name="" id="term-number${count}">
+    </div>
     `
 }
 
@@ -107,9 +153,25 @@ function DanhSach () {
 
 function inputFullTC () {
     inputWrap.innerHTML = `
-    <label for="full-tc">Nhập số tín chỉ toàn khóa học</label>
-    <input type="text" name="" id="full-tc">
-    <input type="button" value="Submit" id="submit-full-tc">
+    <div class="target-wrap">
+        <div class="row">
+            <div class="col l-5 m-5 c-12 sticker-container">
+                <h2>Nhập tổng số tín chỉ trong toàn khóa học</h2>
+                <div class="sticker-wrap">
+                    <img class="sticker" src="./assets/img/unicorn (1).png" alt="">
+                </div>
+            </div>
+            <div class="col l-7 m-7 c-12 target-container">
+                <div class="row target-row">
+                    <div class="col l-12 m-12 c-12 center">
+                        <label for="full-tc">Nhập số tín chỉ toàn khóa học</label><br>
+                        <input type="number" name="" id="full-tc"> <br>
+                        <input type="button" class="button" value="Nhập ngay" id="submit-full-tc">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     `
     var getSubmitFull = document.getElementById('submit-full-tc');
     getSubmitFull.addEventListener('click',getFullTC);
@@ -134,8 +196,24 @@ function tinhDiem () {
     var diemCanDat = ((target * fullTc) - tongDaHoc) / (fullTc - tongTCDaHoc);
 
     inputWrap.innerHTML = `
-    <h2>Điểm của bạn hiện tại ${diemHienTai.toFixed(2)}</h2>
-    <h2>Cần đạt tối thiểu ${diemCanDat.toFixed(2)} để được bằng giỏi!</h2>
+    <div class="target-wrap">
+        <div class="row">
+            <div class="col l-5 m-5 c-12 sticker-container">
+                <h2>Đây rồi kết quả của bạn nè</h2>
+                <div class="sticker-wrap">
+                    <img class="sticker" src="./assets/img/success.png" alt="">
+                </div>
+            </div>
+            <div class="col l-7 m-7 c-12 target-container">
+                <div class="row target-row">
+                    <div class="col l-12 m-12 c12 center">
+                        <h2>Điểm của bạn hiện tại ${diemHienTai.toFixed(2)}</h2>
+                        <h2>Cần đạt tối thiểu ${diemCanDat.toFixed(2)} để được bằng giỏi!</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     `
 }
 

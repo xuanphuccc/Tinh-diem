@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Meow+Script&family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600;1,700;1,800;1,900&family=Oooh+Baby&display=swap');
+
+/* 
+font-family: 'Meow Script', cursive;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Oooh Baby', cursive;
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #eef4f6;
+}
+
+
+.input-points {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 36px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    box-shadow: 0 0 10px #ddd;
+    /* transform: translateY(-50%); */
+}
+
+.sticker {
+    height: 48px;
+}
+
+
+
+/* ------------------ target ----------------- */
+.target-wrap .sticker-wrap .sticker {
+    height: 200px;
+}
+
+.target-wrap .sticker-container {
+    text-align: center;
+    border-right: 1px solid #ddd;
+}
+
+.target-wrap .sticker-container h2{
+    margin-bottom: 24px;
+    color: #406882;
+}
+
+.target-wrap .target-container {
+    display: flex;
+    align-items: center;
+}
+
+.target-wrap .target-row {
+    width: 100%;
+    margin: 24px 0;
+}
+
+.target-wrap .target {
+    background-color: #406882;
+    text-align: center;
+    padding: 16px;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* ----------------- Nhap so hoc ky -------------- */
+
+.target-wrap .target-row .term-container {
+    text-align: center;
+}
+
+input[type="number"] {
+    padding: 12px;
+    margin: 12px 0 16px;
+    width: 50%;
+}
+
+.button {
+    background-color: #406882;
+    border: none;
+    padding: 12px 16px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* ----------------- Nhap diem va so tin chi -------- */
+.center {
+    text-align: center;
+}

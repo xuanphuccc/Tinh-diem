@@ -5,41 +5,75 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <script src="https://kit.fontawesome.com/25a053a904.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <div class="main">
-        <div class="input-points">
-            <form action="">
-               <div class="input-wrap">
-
-
-                    <div class="target-wrap">
-                        <h2>Mục tiêu của bạn là gì?</h2>
-                        <input type="button" id="target-gioi" value="Bằng giỏi">
-                        <input type="button" id="target-kha" value="Bằng khá">
+        <div class="grid wide">
+            <div class="input-points">
+                <form action="">
+                   <div class="input-wrap">
+    
+    
+                        <div class="target-wrap">
+                            <div class="row">
+                                <div class="col l-5 m-5 c-12 sticker-container">
+                                    <h2>Mục tiêu của bạn là gì?</h2>
+                                    <div class="sticker-wrap">
+                                        <img class="sticker" src="./assets/img/unicorn (3).png" alt="">
+                                    </div>
+                                </div>
+                                <div class="col l-7 m-7 c-12 target-container">
+                                    <div class="row target-row">
+                                        <div class="col l-6 m-6 c-6">
+                                            <div class="target" id="target-gioi">
+                                                <img class="sticker" src="./assets/img/medal (2).png" alt="Bằng giỏi">
+                                                <p>Bằng giỏi</p>
+                                            </div>
+                                        </div>
+                                        <div class="col l-6 m-6 c-6">
+                                            <div class="target" id="target-kha">
+                                                <img class="sticker" src="./assets/img/medal (3).png" alt="Bằng khá">
+                                                <p>Bằng khá</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                </form>
+            </div>
 
-                    
-                   <!--  <label for="input-term0">Nhập số học kỳ đã học</label> <br>
-                    <input type="text" id="input-term0" name="" value="">
-                    <input type="button" id="submit-term0" value="Submit">
 
-                    <div class="point-wrap">
-                        <label for="term-point">Nhập điểm tổng kết học kỳ thứ 1 (hệ 4)</label>
-                        <input type="text" name="" id="term-point1">
-                        <label for="term-number">Nhập tổng tín chỉ học kỳ thứ 1</label>
-                        <input type="text" name="" id="term-number1">
+            <!-- <div class="input-points">
+                <form action="">
+                   <div class="input-wrap">
+    
+    
+                        <div class="target-wrap">
+                            <div class="row">
+                                <div class="col l-5 m-5 c-12 sticker-container">
+                                    <h2>Đây rồi kết quả của bạn nè</h2>
+                                    <div class="sticker-wrap">
+                                        <img class="sticker" src="./assets/img/success.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="col l-7 m-7 c-12 target-container">
+                                    <div class="row target-row">
+                                        <div class="col l-12 m-12 c12 center">
+                                            <h2>Điểm của bạn hiện tại ${diemHienTai.toFixed(2)}</h2>
+                                            <h2>Cần đạt tối thiểu ${diemCanDat.toFixed(2)} để được bằng giỏi!</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <input type="button" class="button" id="submit-point" value="Submit"> -->
-                    
-                    <!-- <label for="full-tc">Nhập số tín chỉ toàn khóa học</label>
-                    <input type="text" name="" id="full-tc">
-                    <input type="button" value="Submit"> -->
-                </div>
-                
-            </form>
-
+                </form>
+            </div> -->
         </div>
     </div>
 </body>
