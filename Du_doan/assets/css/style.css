@@ -69,6 +69,10 @@ html {
 }
 
 
+.target-wrap #target-gioi:hover, #target-kha:hover {
+    opacity: 0.8;
+}
+
 /* ----------------- Nhap so hoc ky -------------- */
 
 .target-wrap .target-row .term-container {
@@ -87,6 +91,11 @@ input[type="number"] {
     padding: 12px 16px;
     color: #fff;
     border-radius: 5px;
+    -webkit-appearance: none;
+}
+
+.button:hover {
+    opacity: 0.8;
 }
 
 /* ----------------- Nhap diem va so tin chi -------- */
