@@ -258,7 +258,8 @@ function tinhDiem () {
                     <div class="row target-row">
                         <div class="col l-12 m-12 c12 center">
                             <h2>Điểm của bạn hiện tại <span class="high-light">${diemHienTai.toFixed(2)}</span></h2>
-                            <h2>Bạn đã đủ điểm để đạt bằng giỏi, người có tất cả nhưng không thể có được tôi :))</h2>
+                            <h2>Bạn đã đủ điểm để đạt bằng giỏi</h2>
+                            <h2>Cần duy trì tối thiểu <span class="high-light">${diemCanDat.toFixed(2)}</span> để được bằng giỏi!</h2>
                         </div>
                     </div>
                 </div>
