@@ -221,50 +221,96 @@ function tinhDiem () {
     var diemCanDat = ((target * fullTc) - tongDaHoc) / (fullTc - tongTCDaHoc);
 
     
-
     if (target == 3.20) {
-        inputWrap.innerHTML = `
-    <div class="target-wrap">
-        <div class="row">
-            <div class="col l-5 m-5 c-12 sticker-container">
-                <h2>Đây rồi kết quả của bạn nè</h2>
-                <div class="sticker-wrap">
-                    <img class="sticker" src="./assets/img/success.png" alt="">
+        if (diemHienTai < 3.20) {
+            inputWrap.innerHTML = `
+        <div class="target-wrap">
+            <div class="row">
+                <div class="col l-5 m-5 c-12 sticker-container">
+                    <h2>Đây rồi kết quả của bạn nè</h2>
+                    <div class="sticker-wrap">
+                        <img class="sticker" src="./assets/img/success.png" alt="">
+                    </div>
                 </div>
-            </div>
-            <div class="col l-7 m-7 c-12 target-container">
-                <div class="row target-row">
-                    <div class="col l-12 m-12 c12 center">
-                        <h2>Điểm của bạn hiện tại <span class="high-light">${diemHienTai.toFixed(2)}</span></h2>
-                        <h2>Cần đạt tối thiểu <span class="high-light">${diemCanDat.toFixed(2)}</span> để được bằng giỏi!</h2>
+                <div class="col l-7 m-7 c-12 target-container">
+                    <div class="row target-row">
+                        <div class="col l-12 m-12 c12 center">
+                            <h2>Điểm của bạn hiện tại <span class="high-light">${diemHienTai.toFixed(2)}</span></h2>
+                            <h2>Cần đạt tối thiểu <span class="high-light">${diemCanDat.toFixed(2)}</span> để được bằng giỏi!</h2>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    `
+        `
+        } else {
+            inputWrap.innerHTML = `
+        <div class="target-wrap">
+            <div class="row">
+                <div class="col l-5 m-5 c-12 sticker-container">
+                    <h2>Đây rồi kết quả của bạn nè</h2>
+                    <div class="sticker-wrap">
+                        <img class="sticker" src="./assets/img/success.png" alt="">
+                    </div>
+                </div>
+                <div class="col l-7 m-7 c-12 target-container">
+                    <div class="row target-row">
+                        <div class="col l-12 m-12 c12 center">
+                            <h2>Điểm của bạn hiện tại <span class="high-light">${diemHienTai.toFixed(2)}</span></h2>
+                            <h2>Bạn đã đủ điểm để đạt bằng giỏi, người có tất cả nhưng không thể có được tôi :))</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `
+        }
     }
+    
     if (target == 2.50) {
-    inputWrap.innerHTML = `
-    <div class="target-wrap">
-        <div class="row">
-            <div class="col l-5 m-5 c-12 sticker-container">
-                <h2>Đây rồi kết quả của bạn nè</h2>
-                <div class="sticker-wrap">
-                    <img class="sticker" src="./assets/img/success.png" alt="">
-                </div>
-            </div>
-            <div class="col l-7 m-7 c-12 target-container">
-                <div class="row target-row">
-                    <div class="col l-12 m-12 c12 center">
-                        <h2>Điểm của bạn hiện tại ${diemHienTai.toFixed(2)}</h2>
-                        <h2>Cần đạt tối thiểu ${diemCanDat.toFixed(2)} để được bằng khá!</h2>
+        if (diemHienTai < 2.50) {
+            inputWrap.innerHTML = `
+            <div class="target-wrap">
+                <div class="row">
+                    <div class="col l-5 m-5 c-12 sticker-container">
+                        <h2>Đây rồi kết quả của bạn nè</h2>
+                        <div class="sticker-wrap">
+                            <img class="sticker" src="./assets/img/success.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col l-7 m-7 c-12 target-container">
+                        <div class="row target-row">
+                            <div class="col l-12 m-12 c12 center">
+                                <h2>Điểm của bạn hiện tại ${diemHienTai.toFixed(2)}</h2>
+                                <h2>Cần đạt tối thiểu ${diemCanDat.toFixed(2)} để được bằng khá!</h2>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    `
+            `
+        } else {
+            inputWrap.innerHTML = `
+            <div class="target-wrap">
+                <div class="row">
+                    <div class="col l-5 m-5 c-12 sticker-container">
+                        <h2>Đây rồi kết quả của bạn nè</h2>
+                        <div class="sticker-wrap">
+                            <img class="sticker" src="./assets/img/success.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col l-7 m-7 c-12 target-container">
+                        <div class="row target-row">
+                            <div class="col l-12 m-12 c12 center">
+                                <h2>Điểm của bạn hiện tại ${diemHienTai.toFixed(2)}</h2>
+                                <h2>Bạn đã đủ điểm đạt bằng khá, tiếp tục cố gắng hơn nữa nhé!</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `
+        }
     }
 }
 
