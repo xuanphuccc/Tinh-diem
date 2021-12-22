@@ -93,11 +93,11 @@ function setDiemHKGoc () {
                     <div class="col l-12 m-12 c-12">
                         <div class="row point-wrap">
                             <div class="col l-12 m-12 c-12 center">
-                                <label for="term-point">Nhập điểm tổng kết học kỳ ${count} (hệ 4)</label><br>
+                                <label for="term-point">Nhập điểm tổng kết học kỳ <span class="high-light">${count}</span> (hệ 4)</label><br>
                                 <input type="number" name="" id="term-point${count}" value="">
                             </div>
                             <div class="col l-12 m-12 c-12 center">
-                                <label for="term-number">Nhập tổng tín chỉ học kỳ ${count}</label><br>
+                                <label for="term-number">Nhập tổng tín chỉ học kỳ <span class="high-light">${count}</span></label><br>
                                 <input type="number" name="" id="term-number${count}" value="">
                             </div>
                         </div>
@@ -119,11 +119,11 @@ function setDiemHKVaTinChi () {
     var getPointsWrap = document.querySelector('.point-wrap');
     getPointsWrap.innerHTML = `
     <div class="col l-12 m-12 c-12 center">
-        <label for="term-point">Nhập điểm tổng kết học kỳ ${count} (hệ 4)</label><br>
+        <label for="term-point">Nhập điểm tổng kết học kỳ <span class="high-light">${count}</span> (hệ 4)</label><br>
         <input type="number" name="" id="term-point${count}">
     </div>
     <div class="col l-12 m-12 c-12 center">
-        <label for="term-number">Nhập tổng tín chỉ học kỳ ${count}</label><br>
+        <label for="term-number">Nhập tổng tín chỉ học kỳ <span class="high-light">${count}</span></label><br>
         <input type="number" name="" id="term-number${count}">
     </div>
     `
@@ -235,8 +235,8 @@ function tinhDiem () {
             <div class="col l-7 m-7 c-12 target-container">
                 <div class="row target-row">
                     <div class="col l-12 m-12 c12 center">
-                        <h2>Điểm của bạn hiện tại ${diemHienTai.toFixed(2)}</h2>
-                        <h2>Cần đạt tối thiểu ${diemCanDat.toFixed(2)} để được bằng giỏi!</h2>
+                        <h2>Điểm của bạn hiện tại <span class="high-light">${diemHienTai.toFixed(2)}</span></h2>
+                        <h2>Cần đạt tối thiểu <span class="high-light">${diemCanDat.toFixed(2)}</span> để được bằng giỏi!</h2>
                     </div>
                 </div>
             </div>

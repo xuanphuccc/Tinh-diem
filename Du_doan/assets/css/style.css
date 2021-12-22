@@ -83,6 +83,7 @@ input[type="number"] {
     padding: 12px;
     margin: 12px 0 16px;
     width: 50%;
+    font-size: 16px;
 }
 
 .button {
@@ -90,6 +91,7 @@ input[type="number"] {
     border: none;
     padding: 12px 16px;
     color: #fff;
+    font-size: 16px;
     border-radius: 5px;
     -webkit-appearance: none;
 }
@@ -101,4 +103,41 @@ input[type="number"] {
 /* ----------------- Nhap diem va so tin chi -------- */
 .center {
     text-align: center;
+}
+
+.high-light {
+    font-size: 24px;
+    color: red;
+    font-weight: 700;
+}
+
+
+
+
+
+@media (max-width: 739px) {
+    .target-wrap .sticker-container {
+        border: none;
+    }
+}
+
+/* tablet & Mobile */
+@media (max-width: 1023px) {
+    input[type="number"] {
+        width: 100%;
+    }
+    .button {
+        width: 100%;
+    }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    
+}
+
+
+/* PC */
+@media (min-width: 1024px) {
+
 }
