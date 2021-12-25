@@ -53,12 +53,25 @@ input[type="text"] {
     background-color: #C7B198;
     color: #fff;
     text-align: center;
+    margin: 0;
 }
 
+.table .tr {
+    margin: 0;
+}
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
 
 .table {
     margin-top: 16px;
     width: 100%;
+}
+
+.table-output {
+    min-width: 950px;
 }
 
 .tr:nth-child(even) {
@@ -90,19 +103,20 @@ input[type="text"] {
 
 /* -------------   ------------- */
 .points {
-    margin: 50px 0;
+    margin: 30px 0;
 }
 
-.points .input-wraper {
+.input-wraper {
     background-color: #fff;
     padding: 50px 16px;
     border-radius: 8px;
+    box-shadow: 0 0 10px #ddd;
 }
 
-.points .training h4, p {
+.input-wraper .training h4, p {
     color: #406882;
 }
-.points .training p {
+.input-wraper .training p {
     font-size: 13px;
     margin: 16px 0 40px;
 }
@@ -111,20 +125,31 @@ input[type="text"] {
 /* ----------- Output ------------ */
 
 .output {
-    margin-top: 50px;
+    margin-top: 30px;
     background-color: #fff;
     padding: 50px 16px;
     border-radius: 8px;
+    box-shadow: 0 0 10px #ddd;
+}
+
+.output .table-label {
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+.output .label-desc {
+    text-align: center;
+    font-size: 13px;
 }
 
 .output .noti-text {
-    margin-top: 30px;
+    margin-top: 16px;
     color: #406882;
 }
 
 /*-------- Remove section -------*/
 .output .remove {
-    margin-top: 24px;
+    margin-top: 16px;
 }
 
 .output .remove .label-wrap {
@@ -132,12 +157,13 @@ input[type="text"] {
     display: flex;
     align-items: center;
 }
-.output .remove .label-wrap i {
+.output .remove .label-wrap i, span {
     margin-right: 8px;
     font-size: 24px;
 }
 .output .remove label {
-    font-size: 16px;
+    font-size: 13px;
+    color: #406882;
 }
 
 .output .remove #input-remove {
@@ -185,26 +211,29 @@ input[type="text"] {
 /* ========== Intro ============ */
 .intro {
     margin-bottom: 50px;
+    background: #F0ECE3;
+    box-shadow: 0 0 10px #ddd;
 }
 
 .intro .intro-wrap {
-    background: #F0ECE3;
-    border-radius: 6px;
+    
 }
 
 .intro .intro-wrap .text-wrap {
-    padding: 40px;
 
 }
 
 .intro .intro-wrap .text-wrap p, h3 {
-    margin-top: 24px;
+    margin-top: 16px;
     line-height: 1.6;
     color: #406882;
 }
 
 .intro .intro-wrap .text-wrap h3 {
     font-size: 18px;
+    margin-top: 24px;
+    line-height: 1.6;
+    color: #406882;
 }
 
 .intro .intro-wrap  .img-wrap {
@@ -237,17 +266,22 @@ input[type="text"] {
         text-align: center;
     }
 
+    .output .remove {
+        margin: 0;
+    }
 
-
-    .points {
-        margin: 50px 24px 100px;
+    .intro .intro-wrap .text-wrap {
+        padding: 16px;
+        text-align: center;
+    
     }
 
 
-    .intro .intro-wrap .text-wrap {
-        padding: 24px;
-        text-align: center;
-    
+    .input-wraper {
+        border-radius: 0;
+    }
+    .output {
+        border-radius: 0;
     }
 
 }
@@ -267,6 +301,14 @@ input[type="text"] {
     
     .output .remove #input-remove {
         margin-bottom: 16px;
+    }
+
+
+    .points {
+        margin: 16px 0;
+    }
+    .output {
+        margin-top: 16px;
     }
 }
 

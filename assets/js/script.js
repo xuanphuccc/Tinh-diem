@@ -22,13 +22,15 @@ function MonHoc (tenMh, soTc, tiLe, diemQt, diemThi) {
             tongKet = (this.diemQuaTrinh * 0.3) + (this.DiemThi * 0.7);
 
         }
-        
+
+        tongKet = tongKet.toFixed(2)*1;
+
         if (tongKet == 1.95 || tongKet == 3.95 || tongKet == 4.45 
             || tongKet == 5.45 || tongKet == 5.95 || tongKet == 6.95 
             ||tongKet ==7.95 || tongKet == 8.45 || tongKet ==9.45) {
             tongKet = tongKet + 0.05;
         }
-        return tongKet;
+        return tongKet.toFixed(1);
     }
 
     this.convertDiem = function () {
@@ -125,7 +127,7 @@ function reset () {
         <div class="col l-2 m-2 c-2 th"><label for="diemThi${count}">Điểm thi</label></div>
     </div>
 
-    <div class="row no-gutters">
+    <div class="row no-gutters tr">
         <div class="col l-3 m-3 c-3 td"><input type="text" name="mon" id="mon${count}" value="" autofocus></div>
         <div class="col l-2 m-2 c-2 td"><input type="text" name="tc" id="tc${count}" value=""></div>
         <div class="col l-3 m-3 c-3 td"><input type="text" name="phanTram" id="phanTram${count}" value="" placeholder="(55 hoặc 46 hoặc 37)"></div>
@@ -202,7 +204,7 @@ function print () {
     }
     getOutput.innerHTML = codes;
     getTbhk.innerHTML = `
-    <h2 class="noti-text">Điểm trung bình học kỳ: ${diemTb}</>
+    <h3 class="noti-text">Điểm trung bình học kỳ: ${diemTb}</h3>
     `
 }
 
@@ -213,22 +215,23 @@ var removeLabel = document.querySelector('.label-wrap');
 /* Hàm xóa 1 phần tử của mảng */
 function remove () {
     var index = removeInput.value*1;
-    console.log(`index remove = ${index}`);
     if (index <= n && index > 0) {
         a.splice(index - 1, 1);
         n--;
         removeLabel.innerHTML = `
-        <i  style="color:green;" class="far fa-check-circle"></i>
+        <i  style="color:green;" class="material-icons-outlined">check_circle</i>
         <label style="color:green;" id="remove-label" for="input-remove">Xóa thành công!</label>
         `;
         print();
     } else removeLabel.innerHTML = `
-    <i style="color: #F05454;" class="far fa-times-circle"></i>
-    <label style="color:red;" id="remove-label" for="input-remove">Không có dòng này!</label>
+    <i style="color: #F05454;" class="material-icons-outlined">highlight_off</i>
+    <label style="color: #F05454;" id="remove-label" for="input-remove">Không có dòng này!</label>
     `;
     
     setTimeout (function () {
-        removeLabel.innerText = 'Nhập dòng muốn xóa';
+        removeLabel.innerHTML = `
+        <label id="remove-label" for="input-remove">Nhập dòng muốn xóa</label>
+        `;
     }, 2000);
 }
 
