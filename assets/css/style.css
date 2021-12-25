@@ -28,16 +28,15 @@ select {
     padding: 12px 16px;
     font-size: 16px;
     border: none;
-
+    cursor: pointer;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-}
+    background: url('../img/drop-down-black.png') no-repeat;
+    background-position: right;
+    background-size: 24px;
 
-option {
-    border: none;
 }
-
 
 /* ----------------- Button --------------- */
 .button {
@@ -138,7 +137,7 @@ option {
 }
 .input-wraper .training p {
     font-size: 13px;
-    margin: 16px 0 40px;
+    margin: 8px 0 24px;
 }
 
 
@@ -160,6 +159,11 @@ option {
 .output .label-desc {
     text-align: center;
     font-size: 13px;
+    line-height: 1.6;
+}
+.output .display {
+    line-height: 1.6;
+    display: none;
 }
 
 .output .noti-text {
@@ -332,6 +336,11 @@ option {
     }
     .output .remove #input-remove {
         border-radius: 5px;
+    }
+
+
+    .output .display {
+        display: block;
     }
 }
 

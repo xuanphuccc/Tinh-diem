@@ -32,10 +32,9 @@
                 <div class="input-wraper">
                     <div class="training">
                         <h4>Giải thích thuật ngữ:</h4>
-                        <p>Trọng số: là trọng số của điểm quá trình 
-                        và điểm thi <br> (ví dụ: 55 tức là
-                        điểm quá trình chiếm 50% và điểm thi chiếm 50%).</p>
-                        <h5>Lưu ý: bắt buộc phải nhập 55 hoặc 46 hoặc 37 tương ứng vào ô "Trọng số" nếu không sẽ không tính được.</h5>
+                        <p>Trọng số: là tỉ lệ của điểm quá trình 
+                        và điểm thi <br> (ví dụ: 40% - 60% tức là
+                        điểm quá trình chiếm 40% và điểm thi chiếm 60%).</p>
                     </div>
     
                     <!-- ---------------- Input --------------- -->
@@ -56,7 +55,7 @@
                                     <div class="col l-3 m-3 c-3 td">
                                         <!-- <input type="number" name="phanTram" id="phanTram0" value=""> -->
 
-                                        <select id="phanTram0" name="phanTram" size="3">
+                                        <select id="phanTram0" name="phanTram">
                                             <option value="55">50% - 50%</option>
                                             <option value="46">40% - 60%</option>
                                             <option value="37">30% - 70%</option>
@@ -73,8 +72,11 @@
 
                 <!-- --------- Output --------- -->
                 <div class="output">
-                    <h3 class="table-label">Bảng kết quả</h3>
-                    <p class="label-desc">(Kết quả đã được làm tròn)</p>
+                    <div class="desc-wrap">
+                        <h3 class="table-label">Bảng kết quả</h3>
+                        <p class="label-desc">(Kết quả đã được làm tròn)</p>
+                        <p class="label-desc display">Kéo để xem toàn bộ ›</p>
+                    </div>
                     <div class="table-wrap">
                         <div class="table table-output">
                             <div class="row no-gutters first-row" style="border-radius: 6px 6px 0 0;">
