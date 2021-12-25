@@ -237,7 +237,7 @@ function tinhDiem () {
                     <div class="row target-row">
                         <div class="col l-12 m-12 c12 center">
                             <h2>Điểm của bạn hiện tại <span class="high-light">${diemHienTai.toFixed(2)}</span></h2>
-                            <h2>Cần đạt tối thiểu <span class="high-light">${diemCanDat.toFixed(2)}</span> để được bằng giỏi!</h2>
+                            <h2>Các học kỳ tiếp theo cần tối thiểu <span class="high-light">${diemCanDat.toFixed(2)}</span> điểm để đạt mục tiêu Bằng giỏi!</h2>
                         </div>
                     </div>
                 </div>
@@ -258,8 +258,8 @@ function tinhDiem () {
                     <div class="row target-row">
                         <div class="col l-12 m-12 c12 center">
                             <h2>Điểm của bạn hiện tại <span class="high-light">${diemHienTai.toFixed(2)}</span></h2>
-                            <h2>Bạn đã đủ điểm để đạt bằng giỏi</h2>
-                            <h2>Cần duy trì tối thiểu <span class="high-light">${diemCanDat.toFixed(2)}</span> để được bằng giỏi!</h2>
+                            <h2>Bạn đã đủ điểm để đạt Bằng giỏi</h2>
+                            <h2>Cần tối thiểu <span class="high-light">${diemCanDat.toFixed(2)}</span> điểm để duy trì mục tiêu Bằng giỏi!</h2>
                         </div>
                     </div>
                 </div>
@@ -283,8 +283,8 @@ function tinhDiem () {
                     <div class="col l-7 m-7 c-12 target-container">
                         <div class="row target-row">
                             <div class="col l-12 m-12 c12 center">
-                                <h2>Điểm của bạn hiện tại ${diemHienTai.toFixed(2)}</h2>
-                                <h2>Cần đạt tối thiểu ${diemCanDat.toFixed(2)} để được bằng khá!</h2>
+                                <h2>Điểm của bạn hiện tại <span class="high-light">${diemHienTai.toFixed(2)}</span></h2>
+                                <h2>Các học kỳ tiếp theo cần tối thiểu <span class="high-light">${diemCanDat.toFixed(2)}</span> điểm để đạt mục tiêu Bằng khá!</h2>
                             </div>
                         </div>
                     </div>
@@ -304,8 +304,9 @@ function tinhDiem () {
                     <div class="col l-7 m-7 c-12 target-container">
                         <div class="row target-row">
                             <div class="col l-12 m-12 c12 center">
-                                <h2>Điểm của bạn hiện tại ${diemHienTai.toFixed(2)}</h2>
-                                <h2>Bạn đã đủ điểm đạt bằng khá, tiếp tục cố gắng hơn nữa nhé!</h2>
+                                <h2>Điểm của bạn hiện tại <span class="high-light">${diemHienTai.toFixed(2)}</span></h2>
+                                <h2>Bạn đã đủ điểm đạt Bằng khá!</h2>
+                                <h2>Cần tối thiểu <span class="high-light">${diemCanDat.toFixed(2)}</span> điểm để duy trì mục tiêu Bằng khá!</h2>
                             </div>
                         </div>
                     </div>
