@@ -230,6 +230,7 @@ select {
 .slider .slider-wrap h1 {
     color: #406882;
     text-transform: uppercase;
+    text-align: center;
 }
 
 /* ========== Intro ============ */
