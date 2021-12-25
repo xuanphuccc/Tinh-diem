@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        var audio = new Audio("Tieng_vo_tay.mp3");
+        function playAudio(url) {
+            new Audio(url).play();
+        }
+        /* audio.oncanplaythrough = function(){
+        audio.play();
+        }
+        
+        audio.loop = false;
+        
+        audio.onended = function(){
+        audio.play();
+        }
+         */
+        </script>
+</head>
+<body>
+    <input type="image" src="http://button.png" onclick="audio.play()">
+</body>
+</html>

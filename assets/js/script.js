@@ -22,7 +22,13 @@ function MonHoc (tenMh, soTc, tiLe, diemQt, diemThi) {
             tongKet = (this.diemQuaTrinh * 0.3) + (this.DiemThi * 0.7);
 
         }
-        return tongKet.toFixed(2);
+        
+        if (tongKet == 1.95 || tongKet == 3.95 || tongKet == 4.45 
+            || tongKet == 5.45 || tongKet == 5.95 || tongKet == 6.95 
+            ||tongKet ==7.95 || tongKet == 8.45 || tongKet ==9.45) {
+            tongKet = tongKet + 0.05;
+        }
+        return tongKet;
     }
 
     this.convertDiem = function () {
@@ -222,7 +228,7 @@ function remove () {
     `;
     
     setTimeout (function () {
-        removeLabel.innerText = 'Nhập hàng muốn xóa';
+        removeLabel.innerText = 'Nhập dòng muốn xóa';
     }, 2000);
 }
 
