@@ -310,6 +310,9 @@ input[type="text"] {
     .output {
         margin-top: 16px;
     }
+    .output .remove #input-remove {
+        border-radius: 5px;
+    }
 }
 
 /* Tablet */
