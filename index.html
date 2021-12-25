@@ -52,10 +52,18 @@
             
                                 <div class="row no-gutters tr">
                                     <div class="col l-3 m-3 c-3 td"><input type="text" name="mon" id="mon0" value="" autofocus placeholder="Nhập vào đây"></div>
-                                    <div class="col l-2 m-2 c-2 td"><input type="text" name="tc" id="tc0" value=""></div>
-                                    <div class="col l-3 m-3 c-3 td"><input type="text" name="phanTram" id="phanTram0" value="" placeholder="55 hoặc 46 hoặc 37"></div>
-                                    <div class="col l-2 m-2 c-2 td"><input type="text" name="diemqt" id="diemqt0" value=""></div>
-                                    <div class="col l-2 m-2 c-2 td"><input type="text" name="diemThi" id="diemThi0" value=""></div>
+                                    <div class="col l-2 m-2 c-2 td"><input type="number" name="tc" id="tc0" value=""></div>
+                                    <div class="col l-3 m-3 c-3 td">
+                                        <!-- <input type="number" name="phanTram" id="phanTram0" value=""> -->
+
+                                        <select id="phanTram0" name="phanTram">
+                                            <option value="55">50% - 50%</option>
+                                            <option value="46">40% - 60%</option>
+                                            <option value="37">30% - 70%</option>
+                                        </select>
+                                    </div>
+                                    <div class="col l-2 m-2 c-2 td"><input type="number" name="diemqt" id="diemqt0" value=""></div>
+                                    <div class="col l-2 m-2 c-2 td"><input type="number" name="diemThi" id="diemThi0" value=""></div>
                                 </div>
                             </div>
                             <input type="button" class="button" id="submit" value="Lưu">

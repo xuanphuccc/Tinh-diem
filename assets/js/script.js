@@ -122,17 +122,23 @@ function reset () {
     <div class="row no-gutters first-row" style="border-radius: 6px 6px 0 0;">
         <div class="col l-3 m-3 c-3 th"><label for="mon${count}">Tên môn học</label></div>
         <div class="col l-2 m-2 c-2 th"><label for="tc${count}">Số tín chỉ</label></div>
-        <div class="col l-3 m-3 c-3 th"><label for="phanTram${count}">Tỉ lệ phần trăm</label></div>
+        <div class="col l-3 m-3 c-3 th"><label for="phanTram${count}">Trọng số</label></div>
         <div class="col l-2 m-2 c-2 th"><label for="diemqt${count}">Điểm quá trình</label></div>
         <div class="col l-2 m-2 c-2 th"><label for="diemThi${count}">Điểm thi</label></div>
     </div>
 
     <div class="row no-gutters tr">
         <div class="col l-3 m-3 c-3 td"><input type="text" name="mon" id="mon${count}" value="" autofocus></div>
-        <div class="col l-2 m-2 c-2 td"><input type="text" name="tc" id="tc${count}" value=""></div>
-        <div class="col l-3 m-3 c-3 td"><input type="text" name="phanTram" id="phanTram${count}" value="" placeholder="(55 hoặc 46 hoặc 37)"></div>
-        <div class="col l-2 m-2 c-2 td"><input type="text" name="diemqt" id="diemqt${count}" value=""></div>
-        <div class="col l-2 m-2 c-2 td"><input type="text" name="diemThi" id="diemThi${count}" value=""></div>
+        <div class="col l-2 m-2 c-2 td"><input type="number" name="tc" id="tc${count}" value=""></div>
+        <div class="col l-3 m-3 c-3 td">
+            <select id="phanTram0" name="phanTram${count}">
+                <option value="55">50% - 50%</option>
+                <option value="46">40% - 60%</option>
+                <option value="37">30% - 70%</option>
+            </select>
+        </div>
+        <div class="col l-2 m-2 c-2 td"><input type="number" name="diemqt" id="diemqt${count}" value=""></div>
+        <div class="col l-2 m-2 c-2 td"><input type="number" name="diemThi" id="diemThi${count}" value=""></div>
     </div>
     `
 }
@@ -142,16 +148,7 @@ function check () {
     if (tenMhNew == '' || soTcNew == '' || tiLeNew == '' || diemQtNew == '' || diemThiNew == '') {
         alert('Không được bỏ trống');
         return false;
-    }
-    else {
-        if (tiLeNew == '55' || tiLeNew == '46' || tiLeNew == '37') {
-            
-            return true;
-        } else {
-            alert('Ô "Tỷ lệ phần trăm" phải nhập trong ba số 55 hoặc 46 hoặc 37');
-            return false;
-        }
-    }
+    } else return true;
 }
 
 var n = 0;
@@ -163,6 +160,7 @@ function DSMonHoc () {
         
         var tmp = new MonHoc(tenMhNew, soTcNew, tiLeNew, diemQtNew, diemThiNew);
         n = a.push(tmp);
+        console.table(a);
         count++;
         reset();
     }
