@@ -45,13 +45,13 @@ function setInputTerm () {
             </div>
             <div class="col l-7 m-7 c-12 target-container">
                 <div class="row target-row">
-                    <div class="col l-12 m-12 c-12 term-container">
+                    <div class="col l-12 m-12 c-12 label-container">
                         <label for="input-term">Nhập số học kỳ đã học</label>
                     </div>
-                    <div class="col l-12 m-12 c-12 term-container">
+                    <div class="col l-12 m-12 c-12 label-container">
                         <input type="number" id="input-term" name="" value="">
                     </div>
-                    <div class="col l-12 m-12 c-12 term-container">
+                    <div class="col l-12 m-12 c-12 label-container">
                         <input class="button" type="button" id="submit-term" value="Nhập ngay">
                     </div>
                 </div>
@@ -61,18 +61,44 @@ function setInputTerm () {
     `
     var submitTermBtn = document.getElementById('submit-term');
     submitTermBtn.addEventListener('click',getInputTerm);
+
 }
 // Sau khi set ô nhập thì thực hiện lấy dữ liệu
 // Lấy dữ liệu Số học kỳ đã học
 var soHK = 0;
 function getInputTerm () {
+    var termLabel = document.querySelector('.label-container');
     var inputTerm = document.getElementById('input-term');
     soHK = inputTerm.value * 1;
+    
     if (inputTerm.value != "") {
         if (Number.isInteger(soHK) && soHK >= 0) {
-            setDiemHKGoc ();
-        }else alert('Phải là số nguyên và lớn hơn 0');
-    }else alert('Chưa nhập thông tin');
+            termLabel.innerHTML = `
+            <i style="color: #4AA96C;" class="material-icons-outlined">check_circle</i>
+            <label style="color: #4AA96C;" for="input-term">Nhập thành công</label>
+            `;
+            setTimeout(function () {
+                setDiemHKGoc ();
+            },1000);
+        }
+        else {
+            termLabel.innerHTML = `
+            <i style="color:#F55C47;" class="material-icons-outlined">highlight_off</i>
+            <label style="color:#F55C47;" for="input-term">Số học kỳ phải là số nguyên lớn hơn 0</label>
+            `;
+        }
+    }else {
+        termLabel.innerHTML = `
+        <i style="color:#F55C47;" class="material-icons-outlined">highlight_off</i>
+        <label style="color:#F55C47;" for="input-term">Chưa nhập thông tin</label>
+        `;
+    }
+
+    setTimeout(function () {
+        termLabel.innerHTML = `
+        <label for="input-term">Nhập số học kỳ đã học</label>
+        `;
+    },2000);
 }
 
 
@@ -93,11 +119,15 @@ function setDiemHKGoc () {
                     <div class="col l-12 m-12 c-12">
                         <div class="row point-wrap">
                             <div class="col l-12 m-12 c-12 center">
-                                <label for="term-point">Nhập điểm tổng kết học kỳ <span class="high-light">${count}</span> (hệ 4)</label><br>
+                                <div class="label-container" id="label-point${count}">
+                                    <label for="term-point${count}">Nhập điểm tổng kết học kỳ <span class="high-light">${count}</span> (hệ 4)</label>
+                                </div>
                                 <input type="number" name="" id="term-point${count}" value="">
                             </div>
                             <div class="col l-12 m-12 c-12 center">
-                                <label for="term-number">Nhập tổng tín chỉ học kỳ <span class="high-light">${count}</span></label><br>
+                                <div class="label-container" id="label-tc${count}">
+                                    <label for="term-number${count}">Nhập tổng tín chỉ học kỳ <span class="high-light">${count}</span></label>
+                                </div>
                                 <input type="number" name="" id="term-number${count}" value="">
                             </div>
                         </div>
@@ -119,11 +149,15 @@ function setDiemHKVaTinChi () {
     var getPointsWrap = document.querySelector('.point-wrap');
     getPointsWrap.innerHTML = `
     <div class="col l-12 m-12 c-12 center">
-        <label for="term-point">Nhập điểm tổng kết học kỳ <span class="high-light">${count}</span> (hệ 4)</label><br>
+        <div class="label-container" id="label-point${count}">
+            <label for="term-point${count}">Nhập điểm tổng kết học kỳ <span class="high-light">${count}</span> (hệ 4)</label>
+        </div>
         <input type="number" name="" id="term-point${count}">
     </div>
     <div class="col l-12 m-12 c-12 center">
-        <label for="term-number">Nhập tổng tín chỉ học kỳ <span class="high-light">${count}</span></label><br>
+        <div class="label-container" id="label-tc${count}">
+            <label for="term-number${count}">Nhập tổng tín chỉ học kỳ <span class="high-light">${count}</span></label>
+        </div>
         <input type="number" name="" id="term-number${count}">
     </div>
     `
@@ -138,38 +172,100 @@ function getDiemHKVaTinChi () {
     diemHK = getDiemHK.value * 1;
     soTC = getSoTC.value * 1;
 
+    var labelPointWrap = document.getElementById(`label-point${count}`);
+    var labelTCWrap = document.getElementById(`label-tc${count}`);
+
+    var result = false;
     if (getDiemHK.value == "" || getSoTC.value == "") {
-        alert ('Chưa nhập thông tin');
-        return false;
+        if (getDiemHK.value == "" && getSoTC.value == "") {
+            labelPointWrap.innerHTML = `
+            <i style="color:#F55C47;" class="material-icons-outlined">highlight_off</i>
+            <label style="color:#F55C47;">Chưa nhập thông tin</label>
+            `;
+            labelTCWrap.innerHTML = `
+            <i style="color:#F55C47;" class="material-icons-outlined">highlight_off</i>
+            <label style="color:#F55C47;">Chưa nhập thông tin</label>
+            `;
+        }
+        if (getDiemHK.value == "") {
+            labelPointWrap.innerHTML = `
+            <i style="color:#F55C47;" class="material-icons-outlined">highlight_off</i>
+            <label style="color:#F55C47;">Chưa nhập thông tin</label>
+            `;
+        } else if (getSoTC.value == "") {
+            labelTCWrap.innerHTML = `
+            <i style="color:#F55C47;" class="material-icons-outlined">highlight_off</i>
+            <label style="color:#F55C47;">Chưa nhập thông tin</label>
+            `;
+        }
+        result = false;
     }
     else {
-        if (diemHK < 0) {
-            alert('Điểm học kỳ phải là số và lớn hơn 0');
-            return false;
+        if (diemHK < 0 || diemHK > 4) {
+            if (diemHK < 0) {
+                labelPointWrap.innerHTML = `
+                <i style="color:#F55C47;" class="material-icons-outlined">highlight_off</i>
+                <label style="color:#F55C47;">Điểm không thể nhỏ hơn 0</label>
+                `;
+            }
+            if (diemHK > 4) {
+                labelPointWrap.innerHTML = `
+                <i style="color:#F55C47;" class="material-icons-outlined">highlight_off</i>
+                <label style="color:#F55C47;">Điểm không thể lớn hơn 4</label>
+                `;
+            }
+            result = false;
         }
         else if (Number.isInteger(soTC) && soTC > 0) {
-            return true;
-        } else  {
-            alert ('Số tín chỉ phải là số nguyên và lớn hơn 0');
-            return false;
+            labelPointWrap.innerHTML = `
+            <i style="color: #4AA96C;" class="material-icons-outlined">check_circle</i>
+            <label style="color: #4AA96C;">Nhập thành công</label>
+            `;
+            labelTCWrap.innerHTML = `
+            <i style="color: #4AA96C;" class="material-icons-outlined">check_circle</i>
+            <label style="color: #4AA96C;">nhập thành công</label>
+            `;
+            result = true;
+        } else {
+            labelTCWrap.innerHTML = `
+            <i style="color:#F55C47;" class="material-icons-outlined">highlight_off</i>
+            <label style="color:#F55C47;">Số tín chỉ phải là số nguyên và lớn hơn 0</label>
+            `;
+            result = false;
         }
+        
     }
-    
+
+    if (result == false) {
+        setTimeout(function() {
+            labelPointWrap.innerHTML = `
+            <label for="term-point${count}">Nhập điểm tổng kết học kỳ <span class="high-light">${count}</span> (hệ 4)</label>
+            `;
+            labelTCWrap.innerHTML = `
+            <label for="term-number${count}">Nhập tổng tín chỉ học kỳ <span class="high-light">${count}</span></label>
+            `;
+        },2000);
+    }
+    return result;
 }
 
 function DanhSach () {
     var check = getDiemHKVaTinChi();
+    console.log(check);
     if (check) {
-        var tmp = new DiemHocKy (diemHK, soTC);
-        a.push(tmp);
-        // console.table(a);
-        count++;
-        if (count > soHK) {
-            inputFullTC();
-        }
-        else {
-            setDiemHKVaTinChi();
-        }
+        setTimeout (function() {
+            var tmp = new DiemHocKy (diemHK, soTC);
+            a.push(tmp);
+            console.log('hello4');
+            // console.table(a);
+            count++;
+            if (count > soHK) {
+                inputFullTC();
+            }
+            else {
+                setDiemHKVaTinChi();
+            }
+        },1000);
     }
 }
 
