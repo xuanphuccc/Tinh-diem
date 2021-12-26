@@ -122,13 +122,17 @@ function setDiemHKGoc () {
                                 <div class="label-container" id="label-point${count}">
                                     <label for="term-point${count}">Nhập điểm tổng kết học kỳ <span class="high-light">${count}</span> (hệ 4)</label>
                                 </div>
-                                <input type="number" name="" id="term-point${count}" value="">
+                                <div class="center">
+                                    <input type="number" name="" id="term-point${count}" value="">
+                                </div>
                             </div>
                             <div class="col l-12 m-12 c-12">
                                 <div class="label-container" id="label-tc${count}">
                                     <label for="term-number${count}">Nhập tổng tín chỉ học kỳ <span class="high-light">${count}</span></label>
                                 </div>
-                                <input type="number" name="" id="term-number${count}" value="">
+                                <div class="center">
+                                    <input type="number" name="" id="term-number${count}" value="">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -152,13 +156,17 @@ function setDiemHKVaTinChi () {
         <div class="label-container" id="label-point${count}">
             <label for="term-point${count}">Nhập điểm tổng kết học kỳ <span class="high-light">${count}</span> (hệ 4)</label>
         </div>
-        <input type="number" name="" id="term-point${count}">
+        <div class="center">
+            <input type="number" name="" id="term-point${count}" value="">
+        </div>
     </div>
     <div class="col l-12 m-12 c-12">
         <div class="label-container" id="label-tc${count}">
             <label for="term-number${count}">Nhập tổng tín chỉ học kỳ <span class="high-light">${count}</span></label>
         </div>
-        <input type="number" name="" id="term-number${count}">
+        <div class="center">
+            <input type="number" name="" id="term-number${count}" value="">
+        </div>
     </div>
     `
 }
@@ -285,8 +293,10 @@ function setFullTC () {
                         <div class="label-container" id="full-tc-wrap">
                             <label for="full-tc">Nhập số tín chỉ toàn khóa học</label>
                         </div>
-                        <input type="number" name="" id="full-tc"> <br>
-                        <input type="button" class="button" value="Nhập ngay" id="submit-full-tc">
+                        <div class="center">
+                            <input type="number" name="" id="full-tc"> <br>
+                            <input type="button" class="button" value="Nhập ngay" id="submit-full-tc">
+                        </div>
                     </div>
                 </div>
             </div>
