@@ -75,7 +75,7 @@ html {
 
 /* ----------------- Nhap so hoc ky -------------- */
 
-.target-wrap .target-row .label-container{
+.target-wrap .target-row .label-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,6 +85,10 @@ html {
 .target-wrap .target-row .label-container i {
     font-size: 16px;
     padding-right: 4px;
+}
+
+.target-wrap .target-row .label-container label {
+    font-size: 13px;
 }
 
 input[type="number"] {
