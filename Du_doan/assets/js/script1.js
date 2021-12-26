@@ -137,7 +137,7 @@ function getDiemHKVaTinChi () {
     var getSoTC = document.getElementById(`term-number${count}`);
     diemHK = getDiemHK.value * 1;
     soTC = getSoTC.value * 1;
-    console.log(test);
+
     if (getDiemHK.value == "" || getSoTC.value == "") {
         alert ('Chưa nhập thông tin');
         return false;
