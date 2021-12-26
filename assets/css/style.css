@@ -40,7 +40,7 @@ select {
 
 /* ----------------- Button --------------- */
 .button {
-    min-width: 200px;
+    min-width: 150px;
     display: block;
     border: none;
     background: #406882;
@@ -58,11 +58,6 @@ select {
     /* background: #406882; */
     opacity: 0.8;
     transition: .3s;
-}
-
-.button#submit {
-    margin-top: 16px;
-
 }
 
 
@@ -140,6 +135,28 @@ select {
     margin: 8px 0 24px;
 }
 
+.input-wraper .submit-wrap {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.input-wraper .submit-wrap .alert-text {
+    min-height: 48px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.input-wraper .submit-wrap .alert-text p {
+    font-size: 13px;
+}
+
+.input-wraper .submit-wrap .alert-text i {
+    font-size: 16px;
+    padding-right: 4px;
+}
 
 /* ----------- Output ------------ */
 
@@ -183,7 +200,7 @@ select {
 }
 .output .remove .label-wrap i, span {
     margin-right: 8px;
-    font-size: 24px;
+    font-size: 16px;
 }
 .output .remove label {
     font-size: 13px;
@@ -212,8 +229,80 @@ select {
     background: #F05454;
     /* margin-left: 50px; */
     max-width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.output .remove #reset-btn i {
+    padding-left: 8px;
+    font-size: 16px;
+}
+
+/* -------------- Confirm remove ---------- */
+.remove .confirm-remove {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    animation: opacity ease .4s;
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.remove .show {
+    display: block;
+}
+
+
+
+.remove .confirm-remove .confirm-wrap {
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 24px;
+    border-radius: 5px;
+
+    animation: fadeIn ease .4s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+       transform: translate(-50%,-300px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.remove .confirm-remove .confirm-wrap h3 {
+    margin: 0;
+    text-align: center;
+}
+
+.confirm-remove .confirm-wrap .btn-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 24px;
+}
+.confirm-remove .confirm-wrap .btn-wrap a.button {
+    background-color: #F05454;
+    margin-right: 24px;
+}
 
 /* ========== Slider ============ */
 .slider {
@@ -326,6 +415,10 @@ select {
     
     .output .remove #input-remove {
         margin-bottom: 16px;
+        border-radius: 5px;
+    }
+    .output .remove #remove-btn {
+        border-radius: 5px;
     }
 
 
@@ -335,13 +428,21 @@ select {
     .output {
         margin-top: 16px;
     }
-    .output .remove #input-remove {
-        border-radius: 5px;
-    }
 
 
     .output .display {
         display: block;
+    }
+
+
+    .confirm-remove .confirm-wrap .btn-wrap .cf-btn {
+        width: 100%;
+        margin: 0;
+    }
+
+    .confirm-remove .confirm-wrap .btn-wrap a.button {
+        margin: 0;
+        margin-bottom: 16px;
     }
 }
 

@@ -131,7 +131,7 @@ function reset () {
         <div class="col l-3 m-3 c-3 td"><input type="text" name="mon" id="mon${count}" value="" autofocus></div>
         <div class="col l-2 m-2 c-2 td"><input type="number" name="tc" id="tc${count}" value=""></div>
         <div class="col l-3 m-3 c-3 td">
-            <select id="phanTram0" name="phanTram${count}">
+            <select id="phanTram${count}" name="phanTram">
                 <option value="55">50% - 50%</option>
                 <option value="46">40% - 60%</option>
                 <option value="37">30% - 70%</option>
@@ -144,11 +144,45 @@ function reset () {
 }
 
 function check () {
+    var alertText = document.querySelector('.alert-text');
+    var result = false;
     console.log (tenMhNew, soTcNew, tiLeNew, diemQtNew, diemThiNew)
-    if (tenMhNew == '' || soTcNew == '' || tiLeNew == '' || diemQtNew == '' || diemThiNew == '') {
-        alert('Không được bỏ trống');
-        return false;
-    } else return true;
+    if (tenMhNew == '' || soTcNew == '' || diemQtNew == '' || diemThiNew == '') {
+        alertText.innerHTML = `
+            <i style="color:#F55C47;" class="material-icons-outlined">highlight_off</i>
+            <p style="color:#F55C47;">Chưa nhập đủ thông tin</p>
+        `;
+        
+        result = false;
+    }
+    else if (soTcNew*1 <= 0 || diemQtNew*1 < 0 || diemThiNew*1 < 0) {
+        if (soTcNew*1 <= 0) {
+            alertText.innerHTML = `
+            <i style="color:#F55C47;" class="material-icons-outlined">highlight_off</i>
+            <p style="color:#F55C47;">Số tín chỉ không thể nhỏ hơn 1</p>
+            `;
+        } else if (diemQtNew*1 < 0 || diemThiNew*1 < 0) {
+            alertText.innerHTML = `
+            <i style="color:#F55C47;" class="material-icons-outlined">highlight_off</i>
+            <p style="color:#F55C47;">Điểm không thể là số âm</p>
+            `;
+        }
+
+        result = false;
+    }
+    else {
+        alertText.innerHTML = `
+        <i style="color: #4AA96C;" class="material-icons-outlined">check_circle</i>
+        <p style="color: #4AA96C;">Lưu thành công</p>
+        `;
+
+        result = true;
+    }
+
+    setTimeout (function () {
+        alertText.innerHTML = "";
+    }, 2000);
+    return result;
 }
 
 var n = 0;
@@ -238,3 +272,33 @@ submit.addEventListener('click', DSMonHoc);
 submit.addEventListener('click', print);
 
 removeBtn.addEventListener('click', remove);
+
+
+
+/* ============= Confirm remove =========== */
+var confirmRemove = document.querySelector('.confirm-remove');
+var confirmWrap = document.querySelector('.confirm-wrap');
+var yesBtn = document.getElementById('yes');
+var noBtn = document.getElementById('no');
+var resetBtn = document.getElementById('reset-btn');
+
+
+console.log(confirmRemove, yesBtn, noBtn, confirmWrap);
+
+
+function showConfirm () {
+    confirmRemove.classList.add('show');
+}
+
+function hideConfirm () {
+    confirmRemove.classList.remove('show');
+}
+
+confirmWrap.addEventListener('click', function(event) {
+    event.stopImmediatePropagation()
+    //ngừng nổi bọt để chỉ cho phép bấm vào phần bên ngoài mới tắt modal
+})
+
+resetBtn.addEventListener('click', showConfirm);
+noBtn.addEventListener('click',hideConfirm);
+confirmRemove.addEventListener('click', hideConfirm);

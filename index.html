@@ -14,7 +14,6 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/25a053a904.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/grid.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
@@ -65,7 +64,12 @@
                                     <div class="col l-2 m-2 c-2 td"><input type="number" name="diemThi" id="diemThi0" value=""></div>
                                 </div>
                             </div>
-                            <input type="button" class="button" id="submit" value="Lưu">
+                            <div class="submit-wrap">
+                                <input type="button" class="button" id="submit" value="Lưu">
+                                <div class="alert-text">
+                                    <!-- JS -->
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -136,9 +140,21 @@
                                     </div>
                                 </div>
                                 <div class="col l-4 m-12 c-12 reset-wrap">
-                                    <a href="" class="button" id="reset-btn">Xóa tất cả
-                                        <i class="fas fa-exclamation-triangle"></i>
-                                    </a>
+                                    <p href="" class="button" id="reset-btn">Xóa tất cả
+                                        <!-- <i class="fas fa-exclamation-triangle"></i> -->
+                                        <i class="material-icons-outlined">error_outline</i>
+                                    </p>
+
+                                    <div class="confirm-remove">
+                                        <!-- <div class="blur-bg"></div> -->
+                                        <div class="confirm-wrap">
+                                            <h3>Bạn có chắc chắn muốn xóa tất cả</h3>
+                                            <div class="btn-wrap">
+                                                <a id="yes" href="" class="button cf-btn">Xóa tất cả</a>
+                                                <p id="no" class="button cf-btn">Cancel</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </form>
