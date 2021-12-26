@@ -84,7 +84,7 @@ function getInputTerm () {
         else {
             termLabel.innerHTML = `
             <i style="color:#F55C47;" class="material-icons-outlined">highlight_off</i>
-            <label style="color:#F55C47;" for="input-term">Số học kỳ phải là số nguyên lớn hơn 0</label>
+            <label style="color:#F55C47;" for="input-term">Số học kỳ phải là số nguyên dương</label>
             `;
         }
     }else {
@@ -98,7 +98,7 @@ function getInputTerm () {
         termLabel.innerHTML = `
         <label for="input-term">Nhập số học kỳ đã học</label>
         `;
-    },2000);
+    },1000);
 }
 
 
@@ -229,7 +229,7 @@ function getDiemHKVaTinChi () {
         } else {
             labelTCWrap.innerHTML = `
             <i style="color:#F55C47;" class="material-icons-outlined">highlight_off</i>
-            <label style="color:#F55C47;">Số tín chỉ phải là số nguyên và lớn hơn 0</label>
+            <label style="color:#F55C47;">Số tín chỉ phải là số nguyên dương</label>
             `;
             result = false;
         }
@@ -244,7 +244,7 @@ function getDiemHKVaTinChi () {
             labelTCWrap.innerHTML = `
             <label for="term-number${count}">Nhập tổng tín chỉ học kỳ <span class="high-light">${count}</span></label>
             `;
-        },2000);
+        },1000);
     }
     return result;
 }
@@ -260,7 +260,7 @@ function DanhSach () {
             // console.table(a);
             count++;
             if (count > soHK) {
-                inputFullTC();
+                setFullTC();
             }
             else {
                 setDiemHKVaTinChi();
@@ -269,7 +269,7 @@ function DanhSach () {
     }
 }
 
-function inputFullTC () {
+function setFullTC () {
     inputWrap.innerHTML = `
     <div class="target-wrap">
         <div class="row">
@@ -282,7 +282,9 @@ function inputFullTC () {
             <div class="col l-7 m-7 c-12 target-container">
                 <div class="row target-row">
                     <div class="col l-12 m-12 c-12 center">
-                        <label for="full-tc">Nhập số tín chỉ toàn khóa học</label><br>
+                        <div class="label-container" id="full-tc-wrap">
+                            <label for="full-tc">Nhập số tín chỉ toàn khóa học</label>
+                        </div>
                         <input type="number" name="" id="full-tc"> <br>
                         <input type="button" class="button" value="Nhập ngay" id="submit-full-tc">
                     </div>
@@ -298,12 +300,31 @@ function inputFullTC () {
 var fullTc = 0;
 function getFullTC () {
     var getFull = document.getElementById('full-tc');
+    var fullTCWrap = document.getElementById('full-tc-wrap');
+
     fullTc = getFull.value * 1;
+
     if (getFull.value != "") {
         if (Number.isInteger(fullTc) && fullTc > 0) {
-            tinhDiem();
-        } else alert ('Tổng số tín chỉ phải là số nguyên dương');
-    } else alert ('Chưa nhập thông tin');
+            fullTCWrap.innerHTML = `
+            <i style="color: #4AA96C;" class="material-icons-outlined">check_circle</i>
+            <label style="color: #4AA96C;">Nhập thành công</label>
+            `;
+            setTimeout(function() {
+                tinhDiem();
+            },1000);
+        } else {
+            fullTCWrap.innerHTML =`
+            <i style="color:#F55C47;" class="material-icons-outlined">highlight_off</i>
+            <label style="color: #F55C47;" for="full-tc">Số tín chỉ phải là số nguyên dương</label>
+            `;
+        }
+    } else {
+        fullTCWrap.innerHTML =`
+            <i style="color:#F55C47;" class="material-icons-outlined">highlight_off</i>
+            <label style="color: #F55C47;" for="full-tc">Chưa nhập thông tin</label>
+        `;
+    }
 }
 
 function tinhDiem () {
