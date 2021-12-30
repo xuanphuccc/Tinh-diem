@@ -220,12 +220,18 @@ function print () {
     var diemTb = diemTBHK();
     var codes = '';
     for (var i = 0; i < n; i++) {
+        var phanTramText = '';
+        if (a[i].phanTram == '55') {
+            phanTramText = '50/50';
+        } else if (a[i].phanTram == '46') {
+            phanTramText = '40/60';
+        } else phanTramText = '30/70';
         codes += `
         <div class="row no-gutters tr">
             <div class="col l-1 m-1 c-1 td"><p>${i+1}</p></div>
             <div class="col l-2 m-2 c-2 td"><p>${a[i].tenMonHoc}</p></div>
             <div class="col l-1 m-1 c-1 td"><p>${a[i].soTinchi}</p></div>
-            <div class="col l-1 m-1 c-1 td"><p>${a[i].phanTram}</p></div>
+            <div class="col l-1 m-1 c-1 td"><p>${phanTramText}</p></div>
             <div class="col l-2 m-2 c-2 td"><p>${a[i].diemQuaTrinh}</p></div>
             <div class="col l-2 m-2 c-2 td"><p>${a[i].DiemThi}</p></div>
             <div class="col l-1 m-1 c-1 td"><p>${a[i].diemTongket()}</p></div>
