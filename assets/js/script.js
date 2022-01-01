@@ -309,3 +309,28 @@ function myFunction() {
     navbar.classList.remove("sticky");
   }
 }
+
+
+
+
+/* ============= Change mode =========== */
+var modeBtn = document.querySelector('.dark-mode-wrap');
+var r = document.querySelector(':root');
+
+count = 0;
+function setMode () {
+    if (count %2 == 0) {
+        r.style.setProperty('--dark_blue', '#809BF3');
+        r.style.setProperty('--medium-blue', '#fff');
+        r.style.setProperty('--light_blue', '#20285E');
+    }
+    else {
+        r.style.setProperty('--dark_blue', '#1D2536');
+        r.style.setProperty('--medium-blue', '#303855');
+        r.style.setProperty('--light_blue', '#7F89B0');
+    }
+    count++;
+    console.log(count);
+}
+
+modeBtn.addEventListener('click', setMode);

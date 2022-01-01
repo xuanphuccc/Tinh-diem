@@ -136,7 +136,7 @@ body {
 
 /* ------------- Nav bar  ------------- */
 #navbar {
-    
+    transition: .3s ease;
 }
 
 .sticky {
@@ -215,6 +215,12 @@ body {
 #navbar .dark-mode-wrap i {
     font-size: 24px;
     color: var(--dark_pink);
+    transition: .2s ease;
+}
+
+#navbar .dark-mode-wrap:hover i {
+    transform: rotate(180deg);
+    transition: 1s ease;
 }
 
 /* ------------- Input  ------------- */
