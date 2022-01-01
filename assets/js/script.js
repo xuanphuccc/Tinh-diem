@@ -257,8 +257,8 @@ function remove () {
         a.splice(index - 1, 1);
         n--;
         removeLabel.innerHTML = `
-        <i  style="color:green;" class="material-icons-outlined">check_circle</i>
-        <label style="color:green;" id="remove-label" for="input-remove">Xóa thành công!</label>
+        <i  style="color: #4AA96C;" class="material-icons-outlined">check_circle</i>
+        <label style="color: #4AA96C;" id="remove-label" for="input-remove">Xóa thành công!</label>
         `;
         print();
     } else removeLabel.innerHTML = `
