@@ -149,7 +149,7 @@ body {
     align-items: center;
     width: 1200px;
 
-    /* position: relative; */
+    position: relative;
     left: 50%;
     transform: translateX(-50%);
     transition: background-color .6s ease;
