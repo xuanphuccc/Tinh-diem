@@ -327,7 +327,8 @@ function setMode () {
         /* Light mode */
         r.style.setProperty('--bg-color', '#809BF3');
         r.style.setProperty('--card_color', '#fff');
-        r.style.setProperty('--light_blue', '#20285E');
+        r.style.setProperty('--text_color', '#20285E');
+        r.style.setProperty('--icon-color', '#809BF3');
         modeIcon.style.transform = 'rotate(0deg)';
         modeLabel.innerText = 'Dark mode';
     }
@@ -335,7 +336,8 @@ function setMode () {
         /* Dark mode */
         r.style.setProperty('--bg-color', '#1D2536');
         r.style.setProperty('--card_color', '#303855');
-        r.style.setProperty('--light_blue', '#7F89B0');
+        r.style.setProperty('--text_color', '#7F89B0');
+        r.style.setProperty('--icon-color', '#C9AFC5');
         modeIcon.style.transform = 'rotate(180deg)';
         modeLabel.innerText = 'Light mode';
     }

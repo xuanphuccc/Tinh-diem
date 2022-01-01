@@ -8,16 +8,15 @@
 :root {
     --bg-color: #1D2536;
     --card_color: #303855;
-    --light_blue: #7F89B0;
-    --dark_pink: #C9AFC5;
-    --dark_green: #849A6B;
-    --brown: #6E4C3B;
+    --text_color: #7F89B0;
+    --icon-color: #C9AFC5;
     --purple: #5D5CF9;
 }
 
 html {
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--bg-color);
+    transition: background-color .6s ease;
     scroll-behavior: smooth; /*Trình duyệt cuộn mượt hơn*/
 }
 
@@ -35,13 +34,13 @@ body {
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: var(--bg-color); 
+    background: var(--purple); 
     
   }
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: var(--dark_pink); 
+    background: var(--text_color); 
     border-radius: 3px;
   }
   
@@ -83,7 +82,7 @@ body {
 
 .table .first-row {
     background-color: var(--bg-color);
-    color: var(--light_blue);
+    color: var(--text_color);
     text-align: center;
     margin: 0;
     font-size: 13px;
@@ -103,7 +102,7 @@ body {
 }
 
 /* .tr:nth-child(even) {
-    background: var(--light_blue);
+    background: var(--text_color);
 }
  */
 .tr:hover p {
@@ -117,14 +116,14 @@ body {
 }
 
 .th {
-    border-right: 1px solid var(--light_blue);
+    border-right: 1px solid var(--text_color);
     padding: 8px 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .td {
-    border: 1px solid var(--light_blue);
+    border: 1px solid var(--text_color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -152,6 +151,7 @@ body {
     z-index: 1;
     background-color: var(--card_color);
     transition: .3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 .sticky + .points {
@@ -161,6 +161,7 @@ body {
 #navbar .navbar-wrap {
     display: flex;
     background-color: var(--card_color);
+    transition: background-color .6s ease;
     border-radius: 6px;
     padding: 8px;
     align-items: center;
@@ -183,7 +184,7 @@ body {
     text-decoration: none;
     text-transform: uppercase;
     font-size: 13px;
-    color: var(--dark_pink);
+    color: var(--icon-color);
     padding: 12px 12px;
     display: inline-block;
 }
@@ -219,7 +220,7 @@ body {
 
 #navbar .dark-mode-wrap i {
     font-size: 24px;
-    color: var(--dark_pink);
+    color: var(--icon-color);
     transform: rotate(180deg);
     transition: 1s ease;
 }
@@ -237,7 +238,7 @@ input[type="text"] {
     padding: 12px 16px;
     font-size: 16px;
     background-color: var(--card_color);
-    color: var(--light_blue);
+    color: var(--text_color);
     transition: .1s ease;
 }
 input[type="number"] {
@@ -247,7 +248,7 @@ input[type="number"] {
     padding: 12px 16px;
     font-size: 16px;
     background-color: var(--card_color);
-    color: var(--light_blue);
+    color: var(--text_color);
     transition: .1s ease;
 
     /*Loại bỏ nút mũi tên input: number
@@ -278,7 +279,7 @@ input:-webkit-autofill:active{
 }
 /* Thay đổi màu chữ autocomplete*/
 input:-webkit-autofill{
-    -webkit-text-fill-color: var(--light_blue);
+    -webkit-text-fill-color: var(--text_color);
 }
 
 /* Loại bỏ nút mũi tên ô input: number
@@ -296,7 +297,7 @@ select {
     padding: 12px 16px;
     margin-top: 4px;
     font-size: 16px;
-    color: var(--light_blue);
+    color: var(--text_color);
     border: 2px solid var(--purple);
     border-radius: 5px;
     cursor: pointer;
@@ -325,6 +326,7 @@ select:hover {
 
 .input-wraper {
     background-color: var(--card_color);
+    transition: background-color .6s ease;
     padding: 50px 16px;
     border-radius: 8px;
 }
@@ -334,7 +336,7 @@ select:hover {
 }
 
 .input-wraper .training h4, p {
-    color: var(--light_blue);
+    color: var(--text_color);
 }
 
 .input-wraper .training p {
@@ -343,7 +345,7 @@ select:hover {
 }
 
 .input-wraper .input-container label {
-    color: var(--light_blue);
+    color: var(--text_color);
     font-size: 13px;
 }
 
@@ -380,6 +382,7 @@ select:hover {
 .output {
     margin-top: 30px;
     background-color: var(--card_color);
+    transition: background-color .6s ease;
     padding: 50px 16px;
     border-radius: 8px;
 }
@@ -401,7 +404,7 @@ select:hover {
 
 .output .noti-text {
     margin-top: 16px;
-    color: var(--light_blue);
+    color: var(--text_color);
 }
 
 /*-------- Remove section -------*/
@@ -420,7 +423,7 @@ select:hover {
 }
 .output .remove label {
     font-size: 13px;
-    color: var(--light_blue);
+    color: var(--text_color);
 }
 
 .output .remove #input-remove {
@@ -529,12 +532,13 @@ select:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--card_color);
+    background-color: var(--card_color);
+    transition: background-color .6s ease;
     border-radius: 0 0 10px 10px;
 }
 
 .slider .slider-wrap h1 {
-    color: var(--light_blue);
+    color: var(--text_color);
     text-transform: uppercase;
     text-align: center;
 }
@@ -545,7 +549,8 @@ select:hover {
 }
 
 .intro .intro-wrap {
-    background: var(--card_color);
+    background-color: var(--card_color);
+    transition: background-color .6s ease;
     border-radius: 10px;
 }
 
@@ -556,7 +561,7 @@ select:hover {
 .intro .intro-wrap .text-wrap p, h3 {
     margin-top: 16px;
     line-height: 1.6;
-    color: var(--light_blue);
+    color: var(--text_color);
 }
 
 .intro .intro-wrap .text-wrap p {
@@ -567,7 +572,7 @@ select:hover {
     font-size: 18px;
     margin-top: 24px;
     line-height: 1.6;
-    color: var(--light_blue);
+    color: var(--text_color);
 }
 
 .intro .intro-wrap  .img-wrap {
