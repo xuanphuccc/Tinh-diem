@@ -6,8 +6,8 @@
 }
 
 :root {
-    --dark_blue: #1D2536;
-    --medium-blue: #303855;
+    --bg-color: #1D2536;
+    --card_color: #303855;
     --light_blue: #7F89B0;
     --dark_pink: #C9AFC5;
     --dark_green: #849A6B;
@@ -17,7 +17,7 @@
 
 html {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--dark_blue);
+    background-color: var(--bg-color);
     scroll-behavior: smooth; /*Trình duyệt cuộn mượt hơn*/
 }
 
@@ -35,7 +35,7 @@ body {
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: var(--dark_blue); 
+    background: var(--bg-color); 
     
   }
    
@@ -82,7 +82,7 @@ body {
 }
 
 .table .first-row {
-    background-color: var(--dark_blue);
+    background-color: var(--bg-color);
     color: var(--light_blue);
     text-align: center;
     margin: 0;
@@ -136,6 +136,11 @@ body {
 
 /* ------------- Nav bar  ------------- */
 #navbar {
+    /* Ngăn không cho bôi đen */
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
     transition: .3s ease;
 }
 
@@ -145,7 +150,7 @@ body {
     left: 0;
     right: 0;
     z-index: 1;
-    background-color: var(--medium-blue);
+    background-color: var(--card_color);
     transition: .3s ease;
 }
 
@@ -155,7 +160,7 @@ body {
 
 #navbar .navbar-wrap {
     display: flex;
-    background-color: var(--medium-blue);
+    background-color: var(--card_color);
     border-radius: 6px;
     padding: 8px;
     align-items: center;
@@ -215,11 +220,12 @@ body {
 #navbar .dark-mode-wrap i {
     font-size: 24px;
     color: var(--dark_pink);
+    transform: rotate(180deg);
     transition: .2s ease;
 }
 
 #navbar .dark-mode-wrap:hover i {
-    transform: rotate(180deg);
+    /* transform: rotate(180deg); */
     transition: 1s ease;
 }
 
@@ -231,7 +237,7 @@ input[type="text"] {
     border-radius: 5px;
     padding: 12px 16px;
     font-size: 16px;
-    background-color: var(--medium-blue);
+    background-color: var(--card_color);
     color: var(--light_blue);
     transition: .1s ease;
 }
@@ -241,7 +247,7 @@ input[type="number"] {
     border-radius: 5px;
     padding: 12px 16px;
     font-size: 16px;
-    background-color: var(--medium-blue);
+    background-color: var(--card_color);
     color: var(--light_blue);
     transition: .1s ease;
 
@@ -269,7 +275,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px var(--medium-blue) inset;
+    -webkit-box-shadow: 0 0 0 30px var(--card_color) inset;
 }
 /* Thay đổi màu chữ autocomplete*/
 input:-webkit-autofill{
@@ -298,7 +304,7 @@ select {
     transition: .1s ease;
 
     background: url('../img/drop-down-black.png') no-repeat;
-    background-color: var(--medium-blue);
+    background-color: var(--card_color);
     background-position: right;
     background-size: 24px;
 
@@ -319,7 +325,7 @@ select:hover {
 }
 
 .input-wraper {
-    background-color: var(--medium-blue);
+    background-color: var(--card_color);
     padding: 50px 16px;
     border-radius: 8px;
 }
@@ -374,7 +380,7 @@ select:hover {
 
 .output {
     margin-top: 30px;
-    background-color: var(--medium-blue);
+    background-color: var(--card_color);
     padding: 50px 16px;
     border-radius: 8px;
 }
@@ -524,7 +530,7 @@ select:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--medium-blue);
+    background: var(--card_color);
     border-radius: 0 0 10px 10px;
 }
 
@@ -540,7 +546,7 @@ select:hover {
 }
 
 .intro .intro-wrap {
-    background: var(--medium-blue);
+    background: var(--card_color);
     border-radius: 10px;
 }
 
