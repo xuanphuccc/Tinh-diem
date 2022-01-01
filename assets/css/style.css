@@ -221,13 +221,12 @@ body {
     font-size: 24px;
     color: var(--dark_pink);
     transform: rotate(180deg);
-    transition: .2s ease;
-}
-
-#navbar .dark-mode-wrap:hover i {
-    /* transform: rotate(180deg); */
     transition: 1s ease;
 }
+
+/* #navbar .dark-mode-wrap:hover i {
+    transition: 1s ease;
+} */
 
 /* ------------- Input  ------------- */
 
