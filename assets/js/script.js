@@ -142,6 +142,12 @@ function check () {
 
         result = false;
     }
+    else if (diemQtNew*1 > 10 || diemThiNew*1 > 10) {
+        alertText.innerHTML = `
+            <i style="color:#F55C47;" class="material-icons-outlined">highlight_off</i>
+            <p style="color:#F55C47;">Điểm không thể lớn hơn 10</p>
+            `;
+    }
     else {
         alertText.innerHTML = `
         <i style="color: #4AA96C;" class="material-icons-outlined">check_circle</i>
@@ -263,9 +269,6 @@ var confirmWrap = document.querySelector('.confirm-wrap');
 var yesBtn = document.getElementById('yes');
 var noBtn = document.getElementById('no');
 var resetBtn = document.getElementById('reset-btn');
-
-
-console.log(confirmRemove, yesBtn, noBtn, confirmWrap);
 
 
 function showConfirm () {
