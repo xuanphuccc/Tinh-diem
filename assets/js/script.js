@@ -22,12 +22,12 @@ function MonHoc (tenMh, soTc, tiLe, diemQt, diemThi) {
             tongKet = (this.diemQuaTrinh * 0.3) + (this.DiemThi * 0.7);
 
         }
-
+        console.log('Tổng kết tlt = ' + tongKet);
         tongKet = tongKet.toFixed(2)*1;
 
         if (tongKet == 1.95 || tongKet == 3.95 || tongKet == 4.45 
             || tongKet == 5.45 || tongKet == 5.95 || tongKet == 6.95 
-            ||tongKet ==7.95 || tongKet == 8.45 || tongKet ==9.45) {
+            ||tongKet == 7.95 || tongKet == 8.45 || tongKet ==9.45) {
             tongKet = tongKet + 0.05;
         }
         return tongKet.toFixed(1);
@@ -80,32 +80,23 @@ function MonHoc (tenMh, soTc, tiLe, diemQt, diemThi) {
 }
 
 
+var submit = document.getElementById('submit');
+
+
+var tenMh = document.getElementById('mon');
+var soTc = document.getElementById('tc');
+var tiLe = document.getElementById('phanTram');
+var diemQt = document.getElementById('diemqt');
+var diemThi = document.getElementById('diemThi');
 
 var tenMhNew = '';
 var soTcNew = '';
 var tiLeNew = '';
 var diemQtNew = '';
 var diemThiNew = '';
-var submit = document.getElementById('submit');
-var xemKq = document.getElementById('xemkq');
-
-
-/* vì sau mỗi lần sử dụng innerHTML nó lại
-ghi đè lên cái cũ cho nên phải sử dụng một hàm
-getInput với thời gian thực */
-var count = 0;
 
 function getInput () {
-    var mon = 'mon' + count;
-    var tc = 'tc' + count;
-    var phanTram = 'phanTram' + count;
-    var diemqt = 'diemqt' + count;
-    var thi = 'diemThi' + count;
-    var tenMh = document.getElementById(mon);
-    var soTc = document.getElementById(tc);
-    var tiLe = document.getElementById(phanTram);
-    var diemQt = document.getElementById(diemqt);
-    var diemThi = document.getElementById(thi);
+    
 
     tenMhNew = tenMh.value;
     soTcNew = soTc.value;
@@ -114,33 +105,14 @@ function getInput () {
     diemThiNew = diemThi.value;
 }
 
-/* Ghi đè lên phần input cũ nhằm xóa dữ liệu
-trong ô nhập trước đó để nhập ô tiếp theo */
-var setInput = document.querySelector('.input-table');
-function reset () {
-    setInput.innerHTML = `
-    <div class="row no-gutters first-row" style="border-radius: 6px 6px 0 0;">
-        <div class="col l-3 m-3 c-3 th"><label for="mon${count}">Tên môn học</label></div>
-        <div class="col l-2 m-2 c-2 th"><label for="tc${count}">Số tín chỉ</label></div>
-        <div class="col l-3 m-3 c-3 th"><label for="phanTram${count}">Trọng số</label></div>
-        <div class="col l-2 m-2 c-2 th"><label for="diemqt${count}">Điểm quá trình</label></div>
-        <div class="col l-2 m-2 c-2 th"><label for="diemThi${count}">Điểm thi</label></div>
-    </div>
+/* Xóa giá trị trong ô input sau mỗi lần nhập */
+function resetInput () {
+    tenMh.value = '';
+    soTc.value = '';
+    // tiLe.value = '';
+    diemQt.value = '';
+    diemThi.value = '';
 
-    <div class="row no-gutters tr">
-        <div class="col l-3 m-3 c-3 td"><input type="text" name="mon" id="mon${count}" value="" autofocus></div>
-        <div class="col l-2 m-2 c-2 td"><input type="number" name="tc" id="tc${count}" value=""></div>
-        <div class="col l-3 m-3 c-3 td">
-            <select id="phanTram${count}" name="phanTram">
-                <option value="55">50% - 50%</option>
-                <option value="46">40% - 60%</option>
-                <option value="37">30% - 70%</option>
-            </select>
-        </div>
-        <div class="col l-2 m-2 c-2 td"><input type="number" name="diemqt" id="diemqt${count}" value=""></div>
-        <div class="col l-2 m-2 c-2 td"><input type="number" name="diemThi" id="diemThi${count}" value=""></div>
-    </div>
-    `
 }
 
 function check () {
@@ -195,8 +167,8 @@ function DSMonHoc () {
         var tmp = new MonHoc(tenMhNew, soTcNew, tiLeNew, diemQtNew, diemThiNew);
         n = a.push(tmp);
         console.table(a);
-        count++;
-        reset();
+        // count++;
+        resetInput();
     }
 }
 
@@ -253,7 +225,7 @@ var removeLabel = document.querySelector('.label-wrap');
 /* Hàm xóa 1 phần tử của mảng */
 function remove () {
     var index = removeInput.value*1;
-    if (index <= n && index > 0) {
+    if (index > 0 && index <= n) {
         a.splice(index - 1, 1);
         n--;
         removeLabel.innerHTML = `
@@ -261,10 +233,14 @@ function remove () {
         <label style="color: #4AA96C;" id="remove-label" for="input-remove">Xóa thành công!</label>
         `;
         print();
-    } else removeLabel.innerHTML = `
-    <i style="color: #F05454;" class="material-icons-outlined">highlight_off</i>
-    <label style="color: #F05454;" id="remove-label" for="input-remove">Không có dòng này!</label>
-    `;
+        removeInput.value = '';
+    } else {
+        removeLabel.innerHTML = `
+        <i style="color: #F05454;" class="material-icons-outlined">highlight_off</i>
+        <label style="color: #F05454;" id="remove-label" for="input-remove">Không có dòng này!</label>
+        `;
+        removeInput.value = '';
+    }
     
     setTimeout (function () {
         removeLabel.innerHTML = `

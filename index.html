@@ -23,6 +23,7 @@
 </head>
 <body>
     <div class="main">
+
         <div class="slider">
             <div class="grid wide">
                 <div class="slider-wrap">
@@ -30,6 +31,7 @@
                 </div>
             </div>
         </div>
+
         <div class="points">
             <div class="grid wide">
                 <div class="input-wraper">
@@ -43,29 +45,47 @@
                     <!-- ---------------- Input --------------- -->
                     <div class="input">
                         <form action="#">
-                            <div class="table input-table">
-                                <div class="row no-gutters first-row" style="border-radius: 6px 6px 0 0;">
-                                    <div class="col l-3 m-3 c-3 th" style="border-radius: 6px 0 0 0;"><label for="mon0">Tên môn học</label></div>
-                                    <div class="col l-2 m-2 c-2 th"><label for="tc0">Số tín chỉ</label></div>
-                                    <div class="col l-3 m-3 c-3 th"><label for="phanTram0">Trọng số</label></div>
-                                    <div class="col l-2 m-2 c-2 th"><label for="diemqt0">Điểm quá trình</label></div>
-                                    <div class="col l-2 m-2 c-2 th" style="border-radius: 0 6px 0 0;"><label for="diemThi0">Điểm thi</label></div>
-                                </div>
-            
-                                <div class="row no-gutters tr">
-                                    <div class="col l-3 m-3 c-3 td"><input type="text" name="mon" id="mon0" value="" autofocus placeholder="Nhập vào đây"></div>
-                                    <div class="col l-2 m-2 c-2 td"><input type="number" name="tc" id="tc0" value=""></div>
-                                    <div class="col l-3 m-3 c-3 td">
-                                        <!-- <input type="number" name="phanTram" id="phanTram0" value=""> -->
+                            <div class="input-container">
+                                <div class="row">
 
-                                        <select id="phanTram0" name="phanTram">
-                                            <option value="55">50% - 50%</option>
-                                            <option value="46">40% - 60%</option>
-                                            <option value="37">30% - 70%</option>
-                                        </select>
+                                    <div class="col l-3 m-12 c-12">
+                                        <div class="wrap2">
+                                            <label for="mon0">Tên môn học</label>
+                                            <input type="text" name="mon" id="mon" value="" autofocus>
+                                        </div>
                                     </div>
-                                    <div class="col l-2 m-2 c-2 td"><input type="number" name="diemqt" id="diemqt0" value=""></div>
-                                    <div class="col l-2 m-2 c-2 td"><input type="number" name="diemThi" id="diemThi0" value=""></div>
+
+                                    <div class="col l-2 m-12 c-12">
+                                        <div class="wrap2">
+                                            <label for="tc0">Số tín chỉ</label>
+                                            <input type="number" name="tc" id="tc" value="">
+                                        </div>
+                                    </div>
+
+                                    <div class="col l-3 m-12 c-12">
+                                        <div class="wrap2">
+                                            <label for="phanTram0">Trọng số</label>
+                                            <select id="phanTram" name="phanTram">
+                                                <option value="55">50% / 50%</option>
+                                                <option value="46">40% / 60%</option>
+                                                <option value="37">30% / 70%</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col l-2 m-12 c-12">
+                                        <div class="wrap2">
+                                            <label for="diemqt0">Điểm quá trình</label>
+                                            <input type="number" name="diemqt" id="diemqt" value="">
+                                        </div>
+                                    </div>
+
+                                    <div class="col l-2 m-12 c-12">
+                                        <div class="wrap2">
+                                            <label for="diemThi0">Điểm thi</label>
+                                            <input type="number" name="diemThi" id="diemThi" value="">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="submit-wrap">
@@ -121,13 +141,15 @@
                     <div class="remove">
                         <form action="#">
                             <div class="row">
-                                <div class="col l-8 m-12 c-12">
+                                <div class="col l-9 m-12 c-12">
                                     <div class="remove-choose">
                                         <div class="row">
-                                            <div class="col l-3 m-12 c-12 label-wrap">
+
+                                            <div class="col l-4 m-12 c-12 label-wrap">
                                                 <label id="remove-label" for="input-remove">Nhập dòng muốn xóa</label>
                                             </div>
-                                            <div class="col l-9 m-12 c-12">
+
+                                            <div class="col l-8 m-12 c-12">
                                                 <div class="row no-gutters">
                                                     <div class="col l-7 m-12 c-12">
                                                         <input type="text" id="input-remove" name="" value="">
@@ -143,7 +165,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col l-4 m-12 c-12 reset-wrap">
+                                <div class="col l-3 m-12 c-12 reset-wrap">
                                     <p href="" class="button" id="reset-btn">Xóa tất cả
                                         <!-- <i class="fas fa-exclamation-triangle"></i> -->
                                         <i class="material-icons-outlined">error_outline</i>

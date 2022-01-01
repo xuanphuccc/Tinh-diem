@@ -26,6 +26,7 @@ body {
     overflow-x: hidden;
 }
 
+/*----- Custom scroll bar -----*/
 /* width */
 ::-webkit-scrollbar {
     width: 6px;
@@ -49,40 +50,6 @@ body {
     background: #555; 
   }
 
-input[type="text"] {
-    width: 100%;
-    border: 1px solid var(--purple);
-    padding: 12px 16px;
-    font-size: 16px;
-    background-color: var(--medium-blue);
-    color: var(--light_blue);
-}
-input[type="number"] {
-    width: 100%;
-    border: 1px solid var(--purple);
-    padding: 12px 16px;
-    font-size: 16px;
-    background-color: var(--medium-blue);
-    color: var(--light_blue);
-}
-
-select {
-    width: 100%;
-    padding: 12px 16px;
-    font-size: 16px;
-    color: var(--light_blue);
-    border: none;
-    cursor: pointer;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background: url('../img/drop-down-black.png') no-repeat;
-    background-color: var(--medium-blue);
-    background-position: right;
-    background-size: 24px;
-
-}
-
 /* ----------------- Button --------------- */
 .button {
     min-width: 150px;
@@ -100,7 +67,6 @@ select {
 }
 
 .button:hover {
-    /* background: #406882; */
     opacity: 0.8;
     transition: .3s;
 }
@@ -108,6 +74,11 @@ select {
 
 
 /* ------------------ Table ---------------- */
+.table {
+    margin-top: 16px;
+    width: 100%;
+}
+
 .table .first-row {
     background-color: var(--dark_blue);
     color: var(--light_blue);
@@ -125,19 +96,14 @@ select {
     overflow-x: auto;
 }
 
-.table {
-    margin-top: 16px;
-    width: 100%;
-}
-
 .table-output {
     min-width: 950px;
 }
 
-.tr:nth-child(even) {
-    /* background: var(--light_blue); */
+/* .tr:nth-child(even) {
+    background: var(--light_blue);
 }
-
+ */
 .tr:hover p {
     color: var(--purple);
 }
@@ -166,6 +132,58 @@ select {
 
 
 /* -------------   ------------- */
+
+input[type="text"] {
+    width: 100%;
+    border: 1px solid var(--purple);
+    border-radius: 5px;
+    padding: 12px 16px;
+    font-size: 16px;
+    background-color: var(--medium-blue);
+    color: var(--light_blue);
+}
+input[type="number"] {
+    width: 100%;
+    border: 1px solid var(--purple);
+    border-radius: 5px;
+    padding: 12px 16px;
+    font-size: 16px;
+    background-color: var(--medium-blue);
+    color: var(--light_blue);
+
+    /*Loại bỏ nút mũi tên input: number
+     cho trình duyệt firefox*/
+    -moz-appearance: textfield;
+}
+
+/* Loại bỏ nút mũi tên ô input: number
+    Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+select {
+    width: 100%;
+    padding: 12px 16px;
+    margin-top: 4px;
+    font-size: 16px;
+    color: var(--light_blue);
+    border: 1px solid var(--purple);
+    border-radius: 5px;
+    cursor: pointer;
+
+    background: url('../img/drop-down-black.png') no-repeat;
+    background-color: var(--medium-blue);
+    background-position: right;
+    background-size: 24px;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
 .points {
     margin: 30px 0;
 }
@@ -174,16 +192,26 @@ select {
     background-color: var(--medium-blue);
     padding: 50px 16px;
     border-radius: 8px;
-    /* box-shadow: 0 0 10px #ddd; */
 }
 
 .input-wraper .training h4, p {
     color: var(--light_blue);
 }
+
 .input-wraper .training p {
     font-size: 13px;
     margin: 8px 0 24px;
 }
+
+.input-wraper .input-container label {
+    color: var(--light_blue);
+    font-size: 13px;
+}
+
+.input-wraper .input-container input {
+    margin-top: 4px;
+}
+
 
 .input-wraper .submit-wrap {
     margin-top: 16px;
@@ -215,7 +243,6 @@ select {
     background-color: var(--medium-blue);
     padding: 50px 16px;
     border-radius: 8px;
-    /* box-shadow: 0 0 10px #ddd; */
 }
 
 .output .table-label {
@@ -353,9 +380,6 @@ select {
 }
 
 /* ========== Slider ============ */
-/* .slider {
-    background: var(--medium-blue);
-} */
 
 .slider .slider-wrap {
     height: 200px;
@@ -407,7 +431,6 @@ select {
 .intro .intro-wrap  .img-wrap {
     width: 100%;
     height: 350px;
-    /* background-color: #406882; */
     padding: 16px;
 }
 
@@ -463,6 +486,10 @@ select {
     .button#submit {
         width: 100%;
     
+    }
+
+    .input-wraper .input-container .wrap2 {
+        margin-top: 18px;
     }
 
 
