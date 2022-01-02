@@ -273,12 +273,12 @@ var photo = document.getElementById('photo');
 function takePhoto () {
     var width = photo.clientWidth*10;
     var height = photo.clientHeight*10;
-    var fileName = 'Mục tiêu bằng giỏi';
+    var fileName = 'xuanphuc';
     
     html2canvas(photo).then(function(canvas) {
         // document.body.appendChild(canvas);
-        return Canvas2Image.saveAsPNG(canvas);
-        // Canvas2Image.saveAsPNG(canvas, width, height, fileName);
+        // return Canvas2Image.saveAsPNG(canvas);
+        Canvas2Image.saveAsPNG(canvas, width, height, fileName);
     });
 }
 
