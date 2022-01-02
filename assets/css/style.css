@@ -60,7 +60,7 @@
 
 .table .tr {
     margin: 0;
-    border-left: 1px solid var(--text_color);
+    border-left: 1px solid var(--icon-color);
 }
 
 .table-wrap {
@@ -87,15 +87,16 @@
 }
 
 .th {
-    border-right: 1px solid var(--text_color);
+    /* border-right: 1px solid var(--text_color); */
+    border-right: 1px solid var(--icon-color);
     padding: 8px 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .td {
-    border-right: 1px solid var(--text_color);
-    border-bottom: 1px solid var(--text_color);
+    border-right: 1px solid var(--icon-color);
+    border-bottom: 1px solid var(--icon-color);
     display: flex;
     align-items: center;
     justify-content: center;
