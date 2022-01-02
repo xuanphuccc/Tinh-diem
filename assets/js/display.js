@@ -94,6 +94,9 @@ var subMenuBg = document.querySelector('.sub-menu');
 var subMenuWrap = document.querySelector('.sub-menu-wrap');
 var timesIcon = document.querySelector('.sub-menu-wrap .times-icon-wrap i');
 
+
+var link = document.querySelectorAll('.sub-menu a');
+console.log(link);
 var count1 = 0;
 function openMenu () {
     if (count1 == 1) {
@@ -118,6 +121,12 @@ function closeMenu () {
     }, 600);
 }
 
+function setTimeClose () {
+    setTimeout(function() {
+        closeMenu();
+    }, 600);
+}
+
 function stopBubble (event) {
     event.stopPropagation();
 }
@@ -126,3 +135,7 @@ menuIcon.addEventListener('click', openMenu);
 timesIcon.addEventListener('click', closeMenu);
 subMenuWrap.addEventListener('click', stopBubble);
 subMenuBg.addEventListener('click', closeMenu);
+
+for (var i = 0; i < link.length; i++) {
+    link[i].addEventListener('click', setTimeClose);
+}
