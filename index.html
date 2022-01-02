@@ -19,11 +19,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <div class="main">
-
+        <!-- ============ SLIDER ============ -->
         <div class="slider">
             <div class="grid wide">
                 <div class="slider-wrap">
@@ -32,6 +33,36 @@
             </div>
         </div>
 
+        <!--------- Sub menu --------->
+        <div class="sub-menu" style="display:none">
+            <div class="sub-menu-wrap">
+                <div class="times-icon-wrap">
+                    <i class="material-icons-outlined">close</i>
+                </div>
+                <div class="menu-wrap">
+                    <p class="item">Tính điểm</p>
+                    <p><a href="">Mục tiêu</a></p>
+                    <p class="item">Giới thiệu</p>
+                </div>
+                <div class="nav-contact">
+                    <p>© Tran Xuan Phuc</p>
+                    <div class="brand-logo">
+                        <div class="facebook">
+                            <a href="https://www.facebook.com/xuanphuc.tran.superman/">
+                                <img src="./assets/img/facebook-brands.svg" alt="Facebook">
+                            </a>
+                        </div>
+                        <div class="github">
+                            <a href="https://github.com/xuanphuccc/Tinh-diem">
+                                <img src="./assets/img/github-brands.svg" alt="Github">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ NAVBAR ============ -->
         <div id="navbar" class="">
             <div class="sub-menu-icon">
                 <i class="material-icons-outlined">menu_open</i>
@@ -54,6 +85,9 @@
             </div>
         </div>
 
+        
+
+        <!-- ============ CONTENT ============ -->
         <div class="points">
             <div class="grid wide">
                 <div class="input-wraper"  id="input-tg">
@@ -64,7 +98,7 @@
                         điểm quá trình chiếm 40% và điểm thi chiếm 60% của điểm học phần).</p>
                     </div>
     
-                    <!-- ---------------- Input --------------- -->
+                    <!-- ------------ Input ----------- -->
                     <div class="input">
                         <form action="#">
                             <div class="input-container">
@@ -120,7 +154,7 @@
                     </div>
                 </div>
 
-                <!-- --------- Output --------- -->
+                <!-- ------- Output ------- -->
                 <div class="output">
                     <div class="desc-wrap">
                         <h3 class="table-label">Bảng kết quả</h3>
@@ -212,10 +246,11 @@
             </div>
         </div>
 
+        <!-- ============ HOW TO ============ -->
         <div class="intro">
             <div class="grid wide">
                 <div class="intro-wrap">
-                    <div class="row">
+                    <div class="row no-gutters">
                         <div class="col l-6 m-6 c-12">
                             <div class="text-wrap">
                                 <h3>Công cụ tính điểm này sử dụng bảng quy đổi điểm
@@ -235,6 +270,7 @@
             </div>
         </div>
 
+        <!-- ============ FOOTER ============ -->
         <div id="footer">
             <div class="footer-wrap">
                 <p>© Tran Xuan Phuc</p>
@@ -255,4 +291,5 @@
     </div>
 </body>
 <script src="./assets/js/script.js"></script>
+<script src="./assets/js/display.js"></script>
 </html>

@@ -445,6 +445,17 @@
         margin-right: -12px;
     }
 
+    /* Thêm */
+    .wide .row.no-gutters {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .wide .row.no-gutters .col {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    /* Thêm */
+
     .wide .row.sm-gutter {
         margin-left: -5px;
         margin-right: -5px;
