@@ -278,7 +278,7 @@ function takePhoto () {
     html2canvas(photo).then(function(canvas) {
         // document.body.appendChild(canvas);
         // return Canvas2Image.saveAsPNG(canvas);
-        Canvas2Image.saveAsPNG(canvas, width, height, fileName);
+        Canvas2Image.saveAsJPEG(canvas, width, height, fileName);
     });
 }
 
