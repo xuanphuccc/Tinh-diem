@@ -268,10 +268,15 @@ removeBtn.addEventListener('click', remove);
 var photoBtn = document.getElementById('photo-btn');
 var photo = document.getElementById('photo');
 
+var width = photo.offsetWidth;
+var height = photo.offsetHeight;
+var fileName = 'Bảng điểm quá đẹp';
+
 function takePhoto () {
     html2canvas(photo).then(function(canvas) {
         // document.body.appendChild(canvas);
         return Canvas2Image.saveAsPNG(canvas);
+        // Canvas2Image.saveAsPNG(canvas, width, height, fileName);
     });
 }
 
