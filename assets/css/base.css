@@ -158,6 +158,11 @@ background: #555;
 #navbar .sub-menu-icon i {
     font-size: 24px;
     color: var(--icon-color);
+    transition: .3s ease;
+}
+#navbar .sub-menu-icon i:hover {
+    color: var(--purple);
+    transition: .3s ease;
 }
 
 /* container */
@@ -366,6 +371,12 @@ background: #555;
     display: inline-block;
     padding: 4px;
     margin: 0 4px;
+    transition: .3s;
+}
+
+#footer .brand-logo a:hover {
+    opacity: .6;
+    transition: .3s;
 }
 
 #footer .brand-logo img {
