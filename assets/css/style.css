@@ -48,8 +48,8 @@
 }
 
 .table .first-row {
-    background-color: var(--bg-color);
-    color: var(--text_color);
+    background-color: var(--table_color);
+    color: var(--table_fr_text_color);
     text-align: center;
     margin: 0;
     font-size: 13px;
@@ -286,6 +286,9 @@ select:hover {
 .output #photo-btn i {
     font-size: 18px;
     padding-left: 8px;
+}
+.output #photo-btn:hover i {
+    color: var(--purple);
 }
 
 

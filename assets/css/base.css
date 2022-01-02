@@ -10,6 +10,8 @@
     --text_color: #7F89B0;
     --icon-color: #C9AFC5;
     --purple: #5D5CF9;
+    --table_color: #1D2536; /*bg-color*/
+    --table_fr_text_color: #7F89B0; /*text-color*/
 }
 
 html {

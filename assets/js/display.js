@@ -71,6 +71,8 @@ function setMode () {
         r.style.setProperty('--card_color', '#fff');
         r.style.setProperty('--text_color', '#20285E');
         r.style.setProperty('--icon-color', '#809BF3');
+        r.style.setProperty('--table_color', '#5D5CF9');
+        r.style.setProperty('--table_fr_text_color', '#fff');
         modeIcon.style.transform = 'rotate(0deg)';
         modeLabel.innerText = 'Dark mode';
     }
@@ -80,6 +82,8 @@ function setMode () {
         r.style.setProperty('--card_color', '#303855');
         r.style.setProperty('--text_color', '#7F89B0');
         r.style.setProperty('--icon-color', '#C9AFC5');
+        r.style.setProperty('--table_color', '#1D2536');
+        r.style.setProperty('--table_fr_text_color', '#7F89B0');
         modeIcon.style.transform = 'rotate(180deg)';
         modeLabel.innerText = 'Light mode';
     }
