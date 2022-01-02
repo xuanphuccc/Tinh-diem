@@ -33,24 +33,24 @@ body {
 ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
-  }
+}
   
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: var(--purple); 
-    
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: var(--text_color); 
-    border-radius: 3px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
+/* Track */
+::-webkit-scrollbar-track {
+background: var(--purple); 
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: var(--text_color); 
+border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #555; 
+}
 
 
 
@@ -151,7 +151,7 @@ body {
     transition: 1s ease;
 }
 
-/* ----------- Sub menu ----------- */
+/* ============ Sub menu ============ */
 #navbar .sub-menu-icon {
     display: none;
 }
@@ -163,26 +163,106 @@ body {
 /* container */
 .sub-menu {
     position: fixed;
-    top: 0px;
-    left: 0;
+    top: 0;
     bottom: 0;
-    min-width: 250px;
-    z-index: 1;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    display: none;
+}
+
+/* ------- Start Open & Close BACKGROUND ------- */
+.sub-menu.open-bg {
+    animation: opacity-up-bg .6s ease;
+    animation-fill-mode: forwards;
+}
+@keyframes opacity-up-bg {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+}
+.sub-menu.close-bg {
+    animation: opacity-down-bg .6s ease;
+    animation-fill-mode: forwards;
+}
+@keyframes opacity-down-bg {
+    from {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+/* ------- End Open & Close BACKGROUND ------- */
+
+
+.sub-menu .sub-menu-wrap {
+    height: 100%;
+    max-width: 250px;
+    transform: translateX(-100%);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     background-color: var(--card_color);
 }
 
+
+/* ------- Start Open & Close menu ------- */
+.sub-menu .sub-menu-wrap.open-menu {
+    animation: fadeIn-menu .4s ease;
+    animation-fill-mode: forwards;
+
+}
+@keyframes fadeIn-menu {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+.sub-menu .sub-menu-wrap.close-menu {
+    animation: fadeOut-menu .4s ease;
+    animation-fill-mode: forwards;
+
+}
+@keyframes fadeOut-menu {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+/* ------- End Open & Close menu ------- */
+
+
+
+
+
 .sub-menu .times-icon-wrap {
-    text-align: right;
-    margin: 24px 6px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 6px;
+    padding-top: 24px;
     border-bottom: 1px solid var(--icon-color);
 }
+
+.sub-menu .times-icon-wrap img {
+    height: 100%;
+    margin-left: 8px;
+    margin-bottom: 12px;
+}
+
 .sub-menu .times-icon-wrap i {
     font-size: 24px;
     color: var(--icon-color);
     padding: 8px;
     margin-bottom: 4px;
     transition: .3s ease;
+    cursor: pointer;
 }
 .sub-menu .times-icon-wrap i:hover {
     background-color: var(--purple);
@@ -195,7 +275,7 @@ body {
     margin: 36px 6px;
 
 }
-.sub-menu .menu-wrap .item,
+
 .sub-menu .menu-wrap a {
     padding: 8px 8px;
     margin: 8px 0;
@@ -204,9 +284,9 @@ body {
     font-size: 13px;
     text-transform: uppercase;
     display: block;
+    cursor: pointer;
     transition: .3s ease;
 }
-.sub-menu .menu-wrap .item:hover,
 .sub-menu .menu-wrap a:hover {
     background-color: var(--purple);
     border-radius: 20px;

@@ -44,11 +44,11 @@ function myFunction() {
   if (window.pageYOffset >= sticky) {
     navbar.classList.add("sticky");
     navbar.style.position = 'fixed';
-    navbar.style.transition = '.3s ease';
+    // navbar.style.transition = '.3s ease';
   } else {
     navbar.classList.remove("sticky");
     navbar.style.position = 'relative';
-    navbar.style.transition = '.3s ease';
+    // navbar.style.transition = '.3s ease';
   }
 }
 
@@ -88,4 +88,41 @@ function setMode () {
 
 modeBtn.addEventListener('click', setMode);
 
-/* ============= Change mode =========== */
+/* ============= Open & close sub menu =========== */
+var menuIcon = document.querySelector('.sub-menu-icon i');
+var subMenuBg = document.querySelector('.sub-menu');
+var subMenuWrap = document.querySelector('.sub-menu-wrap');
+var timesIcon = document.querySelector('.sub-menu-wrap .times-icon-wrap i');
+
+var count1 = 0;
+function openMenu () {
+    if (count1 == 1) {
+        // Các lần tiếp theo
+        subMenuBg.classList.replace('close-bg', 'open-bg');
+        subMenuBg.style.display = 'block';
+        subMenuWrap.classList.replace('close-menu', 'open-menu');
+    } else {
+        // Chạy 1 lần khi nhấn icon menu lần đầu tiên
+        subMenuBg.classList.add('open-bg');
+        subMenuBg.style.display = 'block';
+        subMenuWrap.classList.add('open-menu');
+        count1 = 1;
+    }
+}
+
+function closeMenu () {
+    subMenuBg.classList.replace('open-bg', 'close-bg');
+    subMenuWrap.classList.replace('open-menu', 'close-menu');
+    setTimeout(function() {
+        subMenuBg.style.display = 'none';
+    }, 600);
+}
+
+function stopBubble (event) {
+    event.stopPropagation();
+}
+
+menuIcon.addEventListener('click', openMenu);
+timesIcon.addEventListener('click', closeMenu);
+subMenuWrap.addEventListener('click', stopBubble);
+subMenuBg.addEventListener('click', closeMenu);
