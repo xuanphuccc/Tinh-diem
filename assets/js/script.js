@@ -260,3 +260,19 @@ submit.addEventListener('click', DSMonHoc);
 submit.addEventListener('click', print);
 
 removeBtn.addEventListener('click', remove);
+
+
+
+/* =========== Screenshot =========== */
+
+var photoBtn = document.getElementById('photo-btn');
+var photo = document.getElementById('photo');
+
+function takePhoto () {
+    html2canvas(photo).then(function(canvas) {
+        // document.body.appendChild(canvas);
+        return Canvas2Image.saveAsPNG(canvas);
+    });
+}
+
+photoBtn.addEventListener('click', takePhoto);

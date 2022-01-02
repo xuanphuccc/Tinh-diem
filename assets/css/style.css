@@ -243,6 +243,30 @@ select:hover {
     border-radius: 8px;
 }
 
+.output .desc-wrap {
+    position: relative;
+}
+
+.output #photo-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    max-width: 110px;
+    font-size: 13px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid var(--purple);
+    color: var(--text_color);
+    padding: 8px;
+}
+.output #photo-btn i {
+    font-size: 18px;
+    padding-left: 8px;
+}
+
+
+
+
 .output .table-label {
     margin: 0;
     text-transform: uppercase;
