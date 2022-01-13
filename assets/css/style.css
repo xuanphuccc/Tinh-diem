@@ -118,7 +118,7 @@ input[type="text"] {
     background-color: var(--card_color);
     color: var(--text_color);
     transition: .6s ease;
-    transition: background-color .6s ease;
+    /* transition: background-color .6s ease; */
 }
 input[type="number"] {
     width: 100%;
@@ -129,7 +129,7 @@ input[type="number"] {
     background-color: var(--card_color);
     color: var(--text_color);
     transition: .6s ease;
-    transition: background-color .6s ease;
+    /* transition: background-color .6s ease; */
 
     /*Loại bỏ nút mũi tên input: number
      cho trình duyệt firefox*/
@@ -182,7 +182,7 @@ select {
     border-radius: 5px;
     cursor: pointer;
     transition: .6s ease;
-    transition: background-color .6s ease;
+    /* transition: background-color .6s ease; */
 
     background: url('../img/drop-down-black.png') no-repeat;
     background-color: var(--card_color);
