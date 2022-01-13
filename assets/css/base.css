@@ -12,6 +12,13 @@
     --purple: #5D5CF9;
     --table_color: #1D2536; /*bg-color*/
     --table_fr_text_color: #7F89B0; /*text-color*/
+
+    --bg-color: #809BF3;
+    --card_color: #fff;
+    --text_color: #20285E;
+    --icon-color: #809BF3;
+    --table_color: #5D5CF9;
+    --table_fr_text_color: #fff;
 }
 
 html {

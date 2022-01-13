@@ -169,11 +169,10 @@ var a = [];
 function DSMonHoc () {
     getInput();
     if (check()) {
-        
         var tmp = new MonHoc(tenMhNew, soTcNew, tiLeNew, diemQtNew, diemThiNew);
+        
         n = a.push(tmp);
         console.table(a);
-        // count++;
         resetInput();
     }
 }
@@ -192,11 +191,12 @@ function diemTBHK () {
 }
 
 // Thực hiện khi click nút Xem KQ
-var getOutput = document.querySelector('.sub-row');
-var getTbhk = document.querySelector('.tbhk');
 function print () {
+    var getOutput = document.querySelector('.sub-row');
+    var getTbhk = document.querySelector('.tbhk');
     var diemTb = diemTBHK();
     var codes = '';
+
     for (var i = 0; i < n; i++) {
         var phanTramText = '';
         if (a[i].phanTram == '55') {
@@ -271,9 +271,9 @@ var photo = document.getElementById('photo');
 
 
 function takePhoto () {
-    var width = photo.clientWidth*10;
+    /* var width = photo.clientWidth*10;
     var height = photo.clientHeight*10;
-    var fileName = 'xuanphuc';
+    var fileName = 'xuanphuc'; */
     
     html2canvas(photo).then(function(canvas) {
         // document.body.appendChild(canvas);
