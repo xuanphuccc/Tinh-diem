@@ -91,14 +91,10 @@ background: #555;
     margin-top: 120px;
 }
 
-#navbar .logo-container a {
+#navbar .logo-container img {
     display: block;
     height: 100%;
-}
-
-#navbar .logo-container img {
-    height: 100%;
-    max-height: 48px;
+    max-height: 42px;
 }
 
 #navbar .nav-menu {
