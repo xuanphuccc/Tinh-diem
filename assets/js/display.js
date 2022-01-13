@@ -65,7 +65,7 @@ var r = document.querySelector(':root');
 
 count = 0;
 function setMode () {
-    if (count %2 == 0) {
+    if (count %2 != 0) {
         /* Light mode */
         r.style.setProperty('--bg-color', '#809BF3');
         r.style.setProperty('--card_color', '#fff');
