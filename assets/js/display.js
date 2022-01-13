@@ -73,7 +73,7 @@ function setMode () {
         r.style.setProperty('--icon-color', '#809BF3');
         r.style.setProperty('--table_color', '#5D5CF9');
         r.style.setProperty('--table_fr_text_color', '#fff');
-        modeIcon.style.transform = 'rotate(0deg)';
+        modeIcon.style.transform = 'rotate(180deg)';
         modeLabel.innerText = 'Dark mode';
     }
     else {
@@ -84,7 +84,7 @@ function setMode () {
         r.style.setProperty('--icon-color', '#C9AFC5');
         r.style.setProperty('--table_color', '#1D2536');
         r.style.setProperty('--table_fr_text_color', '#7F89B0');
-        modeIcon.style.transform = 'rotate(180deg)';
+        modeIcon.style.transform = 'rotate(0deg)';
         modeLabel.innerText = 'Light mode';
     }
     count++;
