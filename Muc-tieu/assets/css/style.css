@@ -11,19 +11,30 @@ font-family: 'Oooh Baby', cursive;
     box-sizing: border-box;
 }
 
+:root {
+    --purple: #5D5CF9;
+
+    --bg-color: #809BF3;
+    --card_color: #fff;
+    --text_color: #20285E;
+    --icon-color: #809BF3;
+    --table_color: #5D5CF9;
+    --table_fr_text_color: #fff; /*text-color*/
+}
+
 html {
     font-family: 'Montserrat', sans-serif;
-    background-color: #eef4f6;
+    background-color: var(--bg-color);
 }
 
 
 .input-points {
-    background-color: #fff;
+    background-color: var(--card_color);
     border-radius: 10px;
     padding: 36px;
     margin-top: 100px;
     margin-bottom: 100px;
-    box-shadow: 0 0 10px #ddd;
+    /* box-shadow: -5px -5px 0px var(--purple); */
     /* transform: translateY(-50%); */
 }
 
@@ -45,7 +56,7 @@ html {
 
 .target-wrap .sticker-container h2{
     margin-bottom: 24px;
-    color: #406882;
+    color: var(--text_color);
 }
 
 .target-wrap .target-container {
@@ -59,7 +70,7 @@ html {
 }
 
 .target-wrap .target {
-    background-color: #406882;
+    background-color: var(--purple);
     text-align: center;
     padding: 16px;
     color: #fff;
@@ -99,7 +110,7 @@ input[type="number"] {
 }
 
 .button {
-    background-color: #406882;
+    background-color: var(--purple);
     border: none;
     padding: 12px 16px;
     color: #fff;
