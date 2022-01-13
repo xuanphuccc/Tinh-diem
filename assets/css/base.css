@@ -262,6 +262,8 @@ background: #555;
 
 .sub-menu .times-icon-wrap img {
     height: 100%;
+    max-height: 42px;
+    display: block;
     margin-left: 8px;
     margin-bottom: 12px;
 }
