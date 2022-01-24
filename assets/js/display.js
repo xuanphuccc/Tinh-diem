@@ -143,5 +143,3 @@ subMenuBg.addEventListener('click', closeMenu);
 for (var i = 0; i < link.length; i++) {
     link[i].addEventListener('click', setTimeClose);
 }
-
-

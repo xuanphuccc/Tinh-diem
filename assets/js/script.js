@@ -187,41 +187,43 @@ function diemTBHK () {
         tongDiem += a[i].diemH4 * a[i].soTinchi;
         tongTC += a[i].soTinchi;
     }
-    return (tongDiem/tongTC).toFixed(2);
+    return (tongDiem/tongTC).toFixed(2); // Kiểm tra lại đoạn chia số thực cho số nguyên
 }
 
 // Thực hiện khi click nút Xem KQ
-function print () {
+function print (arr) {
     var getOutput = document.querySelector('.sub-row');
     var getTbhk = document.querySelector('.tbhk');
+    var pointWaterMark = document.getElementById('dtb');
     var diemTb = diemTBHK();
     var codes = '';
 
     for (var i = 0; i < n; i++) {
         var phanTramText = '';
-        if (a[i].phanTram == '55') {
+        if (arr[i].phanTram == '55') {
             phanTramText = '50/50';
-        } else if (a[i].phanTram == '46') {
+        } else if (arr[i].phanTram == '46') {
             phanTramText = '40/60';
         } else phanTramText = '30/70';
         codes += `
         <div class="row no-gutters tr">
             <div class="col l-1 m-1 c-1 td"><p>${i+1}</p></div>
-            <div class="col l-2 m-2 c-2 td"><p>${a[i].tenMonHoc}</p></div>
-            <div class="col l-1 m-1 c-1 td"><p>${a[i].soTinchi}</p></div>
+            <div class="col l-2 m-2 c-2 td"><p>${arr[i].tenMonHoc}</p></div>
+            <div class="col l-1 m-1 c-1 td"><p>${arr[i].soTinchi}</p></div>
             <div class="col l-1 m-1 c-1 td"><p>${phanTramText}</p></div>
-            <div class="col l-2 m-2 c-2 td"><p>${a[i].diemQuaTrinh}</p></div>
-            <div class="col l-2 m-2 c-2 td"><p>${a[i].DiemThi}</p></div>
-            <div class="col l-1 m-1 c-1 td"><p>${a[i].diemTongket()}</p></div>
-            <div class="col l-1 m-1 c-1 td"><p>${a[i].diemH4}</p></div>
-            <div class="col l-1 m-1 c-1 td"><p>${a[i].diemChu}</p></div>               
+            <div class="col l-2 m-2 c-2 td"><p>${arr[i].diemQuaTrinh}</p></div>
+            <div class="col l-2 m-2 c-2 td"><p>${arr[i].DiemThi}</p></div>
+            <div class="col l-1 m-1 c-1 td"><p>${arr[i].diemTongket()}</p></div>
+            <div class="col l-1 m-1 c-1 td"><p>${arr[i].diemH4}</p></div>
+            <div class="col l-1 m-1 c-1 td"><p>${arr[i].diemChu}</p></div>               
         </div>
         `
     }
     getOutput.innerHTML = codes;
     getTbhk.innerHTML = `
     <h3 class="noti-text">Điểm trung bình học kỳ: ${diemTb}</h3>
-    `
+    `;
+    pointWaterMark.innerText = `Điểm TB: ${diemTb}`;
 }
 
 
@@ -238,7 +240,7 @@ function remove () {
         <i  style="color: #4AA96C;" class="material-icons-outlined">check_circle</i>
         <label style="color: #4AA96C;" id="remove-label" for="input-remove">Xóa thành công!</label>
         `;
-        print();
+        print(a);
         removeInput.value = '';
     } else {
         removeLabel.innerHTML = `
@@ -256,8 +258,26 @@ function remove () {
 }
 
 
+/* function sorting (arr) {
+    for(var i = 0; i < n-1; i++) {
+        for (var j = 0; j < n; j++) {
+            if (arr[i] < arr[j]) {
+                var tmp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = tmp;
+            }
+        }
+    }
+    return arr;
+} */
+
+
 submit.addEventListener('click', DSMonHoc);
-submit.addEventListener('click', print);
+submit.addEventListener('click', function () {
+    /* var tmpArr = sorting(a);
+    console.log('type of tmpArr: ' + typeof(tmpArr)); */
+    print(a);
+});
 
 removeBtn.addEventListener('click', remove);
 

@@ -47,6 +47,10 @@
     font-size: 20px;
 }
 
+#water-mark #dtb {
+    margin-right: 16px;
+}
+
 .table .first-row {
     background-color: var(--table_color);
     color: var(--table_fr_text_color);

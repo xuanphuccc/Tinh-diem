@@ -57,4 +57,17 @@
         <div class="child-box"></div>
     </div>
 </body>
+<script>
+    var x = [ 'p0', 'p1', 'p2', 3]; 
+
+    function call_me(params) {
+        alert('hello');
+        for (i=0; i<params.length; i++) {
+            alert(params[i])
+        }
+    }
+
+    var space = document.querySelector('.box');
+    space.addEventListener('click', call_me);
+</script>
 </html>
