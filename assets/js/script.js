@@ -11,6 +11,7 @@ function MonHoc (tenMh, soTc, tiLe, diemQt, diemThi) {
     this.DiemThi = diemThi*1;
     this.diemChu = '';
     this.diemH4 = 0;
+    this.diemH10 = 0;
 
     this.diemTongket = function () {
         var tongKet = 0;
@@ -30,11 +31,12 @@ function MonHoc (tenMh, soTc, tiLe, diemQt, diemThi) {
             ||tongKet == 7.95 || tongKet == 8.45 || tongKet ==9.45) {
             tongKet = tongKet + 0.05;
         }
-        return tongKet.toFixed(1);
+        return tongKet.toFixed(1)*1;
     }
 
     this.convertDiem = function () {
         var diem = this.diemTongket();
+        this.diemH10 = diem;
 
         if (diem >= 9.5) {
             this.diemChu = 'A+';
@@ -109,7 +111,6 @@ function getInput () {
 function resetInput () {
     tenMh.value = '';
     soTc.value = '';
-    // tiLe.value = '';
     diemQt.value = '';
     diemThi.value = '';
 
@@ -163,7 +164,7 @@ function check () {
     return result;
 }
 
-var n = 0;
+
 var a = [];
 // Thực hiện khi nhấn nút Submit
 function DSMonHoc () {
@@ -171,7 +172,7 @@ function DSMonHoc () {
     if (check()) {
         var tmp = new MonHoc(tenMhNew, soTcNew, tiLeNew, diemQtNew, diemThiNew);
         
-        n = a.push(tmp);
+        a.push(tmp);
         console.table(a);
         resetInput();
     }
@@ -182,7 +183,7 @@ function DSMonHoc () {
 function diemTBHK () {
     var tongTC = 0;
     var tongDiem = 0;
-    for (var i = 0; i < n; i++) {
+    for (var i = 0; i < a.length; i++) {
         a[i].convertDiem();
         tongDiem += a[i].diemH4 * a[i].soTinchi;
         tongTC += a[i].soTinchi;
@@ -191,14 +192,14 @@ function diemTBHK () {
 }
 
 // Thực hiện khi click nút Xem KQ
+var diemTb = 0;
 function print (arr) {
     var getOutput = document.querySelector('.sub-row');
     var getTbhk = document.querySelector('.tbhk');
     var pointWaterMark = document.getElementById('dtb');
-    var diemTb = diemTBHK();
     var codes = '';
 
-    for (var i = 0; i < n; i++) {
+    for (var i = 0; i < a.length; i++) {
         var phanTramText = '';
         if (arr[i].phanTram == '55') {
             phanTramText = '50/50';
@@ -213,7 +214,7 @@ function print (arr) {
             <div class="col l-1 m-1 c-1 td"><p>${phanTramText}</p></div>
             <div class="col l-2 m-2 c-2 td"><p>${arr[i].diemQuaTrinh}</p></div>
             <div class="col l-2 m-2 c-2 td"><p>${arr[i].DiemThi}</p></div>
-            <div class="col l-1 m-1 c-1 td"><p>${arr[i].diemTongket()}</p></div>
+            <div class="col l-1 m-1 c-1 td"><p>${arr[i].diemH10}</p></div>
             <div class="col l-1 m-1 c-1 td"><p>${arr[i].diemH4}</p></div>
             <div class="col l-1 m-1 c-1 td"><p>${arr[i].diemChu}</p></div>               
         </div>
@@ -233,9 +234,8 @@ var removeLabel = document.querySelector('.label-wrap');
 /* Hàm xóa 1 phần tử của mảng */
 function remove () {
     var index = removeInput.value*1;
-    if (index > 0 && index <= n) {
+    if (index > 0 && index <= a.length) {
         a.splice(index - 1, 1);
-        n--;
         removeLabel.innerHTML = `
         <i  style="color: #4AA96C;" class="material-icons-outlined">check_circle</i>
         <label style="color: #4AA96C;" id="remove-label" for="input-remove">Xóa thành công!</label>
@@ -258,26 +258,30 @@ function remove () {
 }
 
 
-/* function sorting (arr) {
-    for(var i = 0; i < n-1; i++) {
-        for (var j = 0; j < n; j++) {
-            if (arr[i] < arr[j]) {
+function sorting (arr) {
+    for(var i = 0; i < arr.length - 1; i++) {
+        for (var j = i + 1; j < arr.length; j++) {
+            if (arr[i].diemH10 < arr[j].diemH10) {
                 var tmp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = tmp;
             }
         }
     }
-    return arr;
-} */
+    console.table(a);
+}
+
+
+function run () {
+    diemTb = diemTBHK();
+    sorting(a);
+    print(a);
+}
+
 
 
 submit.addEventListener('click', DSMonHoc);
-submit.addEventListener('click', function () {
-    /* var tmpArr = sorting(a);
-    console.log('type of tmpArr: ' + typeof(tmpArr)); */
-    print(a);
-});
+submit.addEventListener('click', run);
 
 removeBtn.addEventListener('click', remove);
 
