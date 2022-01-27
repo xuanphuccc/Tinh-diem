@@ -125,6 +125,7 @@ function check () {
             <i style="color:#F55C47;" class="material-icons-outlined">highlight_off</i>
             <p style="color:#F55C47;">Chưa nhập đủ thông tin</p>
         `;
+        submit.classList.add('button-warning');
         
         result = false;
     }
@@ -134,11 +135,14 @@ function check () {
             <i style="color:#F55C47;" class="material-icons-outlined">highlight_off</i>
             <p style="color:#F55C47;">Số tín chỉ không thể nhỏ hơn 1</p>
             `;
+            submit.classList.add('button-warning');
+
         } else if (diemQtNew*1 < 0 || diemThiNew*1 < 0) {
             alertText.innerHTML = `
             <i style="color:#F55C47;" class="material-icons-outlined">highlight_off</i>
             <p style="color:#F55C47;">Điểm không thể là số âm</p>
             `;
+            submit.classList.add('button-warning');
         }
 
         result = false;
@@ -148,18 +152,21 @@ function check () {
             <i style="color:#F55C47;" class="material-icons-outlined">highlight_off</i>
             <p style="color:#F55C47;">Điểm không thể lớn hơn 10</p>
             `;
+            submit.classList.add('button-warning');
     }
     else {
         alertText.innerHTML = `
         <i style="color: #4AA96C;" class="material-icons-outlined">check_circle</i>
         <p style="color: #4AA96C;">Lưu thành công</p>
         `;
-
+        submit.classList.add('button-success');
         result = true;
     }
 
     setTimeout (function () {
         alertText.innerHTML = "";
+        submit.classList.remove('button-warning');
+        submit.classList.remove('button-success');
     }, 2000);
     return result;
 }
@@ -191,7 +198,7 @@ function diemTBHK () {
     return (tongDiem/tongTC).toFixed(2); // Kiểm tra lại đoạn chia số thực cho số nguyên
 }
 
-// Thực hiện khi click nút Xem KQ
+// Thực hiện khi click nút Lưu
 var diemTb = 0;
 function print (arr) {
     var getOutput = document.querySelector('.sub-row');
@@ -240,6 +247,7 @@ function remove () {
         <i  style="color: #4AA96C;" class="material-icons-outlined">check_circle</i>
         <label style="color: #4AA96C;" id="remove-label" for="input-remove">Xóa thành công!</label>
         `;
+        removeBtn.style.backgroundColor = '#4AA96C';
         print(a);
         removeInput.value = '';
     } else {
@@ -247,6 +255,7 @@ function remove () {
         <i style="color: #F05454;" class="material-icons-outlined">highlight_off</i>
         <label style="color: #F05454;" id="remove-label" for="input-remove">Không có dòng này!</label>
         `;
+        removeBtn.style.backgroundColor = '#F05454';
         removeInput.value = '';
     }
     
@@ -254,6 +263,7 @@ function remove () {
         removeLabel.innerHTML = `
         <label id="remove-label" for="input-remove">Nhập dòng muốn xóa</label>
         `;
+        removeBtn.style.backgroundColor = 'var(--purple)';
     }, 2000);
 }
 
@@ -270,7 +280,6 @@ function sorting (arr) {
     }
     console.table(a);
 }
-
 
 function run () {
     diemTb = diemTBHK();

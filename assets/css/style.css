@@ -23,15 +23,14 @@
     transition: .3s;
 }
 
-
-
-/* ==============----- Table ==============--- */
-.table {
-    padding: 16px 4px 0;
-    width: 100%;
-    background-color: var(--card_color);
-    transition: .6s ease;
+.button.button-warning {
+    background-color: #F05454 !important;
 }
+
+.button.button-success {
+    background-color: #4AA96C !important;
+}
+
 
 #water-mark {
     display: flex;
@@ -49,6 +48,15 @@
 
 #water-mark #dtb {
     margin-right: 16px;
+}
+
+
+/* ==============----- Table ==============--- */
+.table {
+    padding: 16px 4px 0;
+    width: 100%;
+    background-color: var(--card_color);
+    transition: .6s ease;
 }
 
 .table .first-row {
@@ -136,7 +144,7 @@ input[type="number"] {
     /* transition: background-color .6s ease; */
 
     /*Loại bỏ nút mũi tên input: number
-     cho trình duyệt firefox*/
+    cho trình duyệt firefox*/
     -moz-appearance: textfield;
 }
 
@@ -170,8 +178,8 @@ input:-webkit-autofill{
     Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 
