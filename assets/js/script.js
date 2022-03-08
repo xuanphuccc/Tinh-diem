@@ -1,8 +1,4 @@
 
-
-
-
-
 function MonHoc (tenMh, soTc, tiLe, diemQt, diemThi) {
     this.tenMonHoc = tenMh;
     this.soTinchi = soTc*1;
@@ -98,8 +94,6 @@ var diemQtNew = '';
 var diemThiNew = '';
 
 function getInput () {
-    
-
     tenMhNew = tenMh.value;
     soTcNew = soTc.value;
     tiLeNew = tiLe.value;
@@ -228,6 +222,7 @@ function print (arr) {
         `
     }
     getOutput.innerHTML = codes;
+    // Fix lỗi chưa nhập thông tin sẽ hiện điểm trung bình là NaN
     getTbhk.innerHTML = `
     <h3 class="noti-text">Điểm trung bình học kỳ: ${diemTb}</h3>
     `;
