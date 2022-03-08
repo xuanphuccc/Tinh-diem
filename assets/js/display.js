@@ -67,7 +67,7 @@ count = 0;
 function setMode () {
     if (count %2 != 0) {
         /* Light mode */
-        r.style.setProperty('--bg-color', '#809BF3');
+        r.style.setProperty('--bg-color', '#adc4d1');
         r.style.setProperty('--card_color', '#fff');
         r.style.setProperty('--text_color', '#20285E');
         r.style.setProperty('--icon-color', '#809BF3');

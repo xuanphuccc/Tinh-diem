@@ -9,7 +9,8 @@
 :root {
     --purple: #5D5CF9;
 
-    --bg-color: #809BF3;
+    /* --bg-color: #809BF3; */
+    --bg-color: #adc4d1;
     --card_color: #fff;
     --text_color: #20285E;
     --icon-color: #809BF3;

@@ -300,7 +300,7 @@ select:hover {
     align-items: center;
     justify-content: center;
     min-width: 100px;
-    max-width: 110px;
+    max-width: 120px;
     font-size: 13px;
     background-color: rgba(0, 0, 0, 0);
     border: 2px solid var(--purple);
@@ -458,21 +458,15 @@ select:hover {
 }
 
 .slider .slider-wrap {
-    height: 200px;
+    height: 80vh;
     padding: 0 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: var(--card_color);
     transition: background-color .6s ease;
     border-radius: 0 0 10px 10px;
+    background: url('../img/5803390.jpg') bottom center /cover no-repeat;
 }
 
-.slider .slider-wrap h1 {
-    color: var(--text_color);
-    text-transform: uppercase;
-    text-align: center;
-}
+
 
 /* ========== Intro ============ */
 .intro {
@@ -480,14 +474,14 @@ select:hover {
 }
 
 .intro .intro-wrap {
-    padding: 50px 0;
+    padding: 50px 16px;
     background-color: var(--card_color);
     transition: background-color .6s ease;
     border-radius: 10px;
 }
 
 .intro .intro-wrap .text-wrap {
-    padding: 0 16px;
+    padding-right: 16px;
 }
 
 .intro .intro-wrap .text-wrap p {
