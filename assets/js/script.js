@@ -253,8 +253,6 @@ function run() {
 submit.addEventListener("click", DSMonHoc);
 submit.addEventListener("click", run);
 
-removeBtn.addEventListener("click", remove);
-
 /* =========== Screenshot =========== */
 
 var photoBtn = document.getElementById("photo-btn");
