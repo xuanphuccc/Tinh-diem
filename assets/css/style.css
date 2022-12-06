@@ -10,7 +10,7 @@
     padding: 14px 16px;
     font-size: 16px;
     border-radius: 5px;
-    -webkit-appearance: none;
+    appearance: none;
     cursor: pointer;
     text-decoration: none;
     text-align: center;
@@ -150,7 +150,7 @@ input[type="number"] {
 
     /*Loại bỏ nút mũi tên input: number
     cho trình duyệt firefox*/
-    -moz-appearance: textfield;
+    appearance: textfield;
 }
 
 input:hover {
@@ -172,7 +172,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px var(--card_color) inset;
+    box-shadow: 0 0 0 30px var(--card_color) inset;
 }
 /* Thay đổi màu chữ autocomplete*/
 input:-webkit-autofill{
@@ -183,7 +183,7 @@ input:-webkit-autofill{
     Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+    appearance: none;
     margin: 0;
 }
 
@@ -664,6 +664,10 @@ select:hover {
     .confirm-remove .confirm-wrap .btn-wrap a.button {
         margin: 0;
         margin-bottom: 16px;
+    }
+
+    .output-controls {
+        justify-content: center !important;
     }
 }
 
