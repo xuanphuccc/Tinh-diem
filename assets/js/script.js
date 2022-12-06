@@ -183,7 +183,7 @@ function diemTBHK() {
 var diemTb = 0;
 function print(arr) {
   var getOutput = document.querySelector(".sub-row");
-  var getTbhk = document.querySelector(".tbhk");
+  var getTbhk = document.querySelector(".noti-text");
   var pointWaterMark = document.getElementById("dtb");
   var codes = "";
 
@@ -219,9 +219,7 @@ function print(arr) {
   }
   getOutput.innerHTML = codes;
   // Fix lỗi chưa nhập thông tin sẽ hiện điểm trung bình là NaN
-  getTbhk.innerHTML = `
-    <h3 class="noti-text">Điểm trung bình học kỳ: ${diemTb}</h3>
-    `;
+  getTbhk.innerText = `${diemTb}`;
   pointWaterMark.innerText = `Điểm TB: ${diemTb}`;
 }
 

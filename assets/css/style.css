@@ -316,11 +316,6 @@ select:hover {
     display: none;
 }
 
-.output .noti-text {
-    margin-top: 16px;
-    color: var(--text_color);
-}
-
 /*-------- Remove section -------*/
 .index-cell {
     position: relative;
@@ -403,6 +398,57 @@ select:hover {
     padding-left: 8px;
     font-size: 16px;
 }
+
+/* Scores ARG */
+.tbhk {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+    margin-left: 8px;
+    width: 160px;
+    height: 160px;
+    padding: 16px;
+    background-color: #fceee5;
+    border-radius: 8px;
+    /* #fceee5 */
+    /* #f8bd8f */
+
+}
+
+.tbhk_title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tbhk_title-icon {
+    margin-right: 4px;
+    color: #f8bd8f;
+}
+
+.tbhk_title-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text_color);
+}
+
+.noti-text {
+    font-size: 32px;
+    text-align: center;
+    color: var(--text_color);
+}
+
+.tbhk_description {
+    padding: 4px 8px;
+    background-color: #f8bd8f;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 50px;
+}
+
 
 /* ==============- Confirm remove ---------- */
 .output-controls .confirm-remove {
