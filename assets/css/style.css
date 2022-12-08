@@ -129,6 +129,7 @@
 /* ============== Input  ============== */
 
 input[type="text"] {
+    display: block;
     width: 100%;
     border: 2px solid var(--purple);
     outline: none;
@@ -142,6 +143,7 @@ input[type="text"] {
     /* transition: background-color .6s ease; */
 }
 input[type="number"] {
+    display: block;
     width: 100%;
     border: 2px solid var(--purple);
     outline: none;
