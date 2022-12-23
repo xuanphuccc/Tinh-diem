@@ -140,7 +140,6 @@ input[type="text"] {
     color: var(--text_color);
     transition: .6s ease;
     appearance: none;
-    /* transition: background-color .6s ease; */
 }
 input[type="number"] {
     display: block;
@@ -153,7 +152,6 @@ input[type="number"] {
     background-color: var(--card_color);
     color: var(--text_color);
     transition: .6s ease;
-    /* transition: background-color .6s ease; */
     
     /*Loại bỏ nút mũi tên input: number
     cho trình duyệt firefox*/

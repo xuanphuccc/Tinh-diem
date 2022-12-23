@@ -226,7 +226,7 @@ function print(arr) {
 /* Hàm xóa 1 phần tử của mảng */
 function remove(index) {
   a.splice(index, 1);
-  print(a);
+  run();
 }
 
 function sorting(arr) {
